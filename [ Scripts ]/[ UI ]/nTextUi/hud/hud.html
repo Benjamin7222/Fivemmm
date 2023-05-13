@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="nui://game/ui/jquery.js"></script>
+    <script src="https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js"></script>
+    <script src="assets/js/onscreenmenucheck.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="nui://BackLandUI/hud/assets/css/hud.css" />
+    <link rel="stylesheet" href="assets/css/hud.css" />
+    <link rel="stylesheet" href="nui://BackLandUI/hud/assets/css/menu.css" />
+    <link rel="stylesheet" href="assets/css/menu.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="menuContainer">
+      <!--<img id="cursorPointer" src="nui://BackLandUI/hud/assets/images/cursor.png">
+        <a class="crosshair" href="#"></a>-->
+      <ul class="menu menu-user"></ul>
+      <ul class="menu menu-car"></ul>
+    </div>
+
+    <div id="hud">
+      <div class="element-1">
+        <div class="e1-hud-top"></div>
+
+        <div class="e1-hud-bottom">
+          <div class="e1-hud-bottom-b1">
+            <div class="e1-hud-bottom-b1-c1">
+              <div class="e1-hud-bottom-b1-c1-top" style="display: block">
+                <div class="purgecoins" style="display: none;">
+                  <img src="assets/images/coin.png" alt="" />
+                  <p id="currentBalance">10000</p>
+                </div>
+              </div>
+
+              
+            </div>
+            <div class="e1-hud-bottom-b1-c2"></div>
+          </div>
+          <div class="e1-hud-bottom-b2">
+            <div class="e1-hud-bottom-b2-c1"></div>
+            <div class="e1-hud-bottom-b2-c2">
+              <!-- <div class="e1-hud-bottom-b1-c2-top">
+                <div id="micro">
+                  <img
+                    id="microOff"
+                    src="nui://BackLandUI/hud/assets/images/mic.png"
+                    onerror="this.onerror = null; this.src=this.src.replace('nui://BackLandUI/hud/', '');"
+                  />
+                </div>
+
+                <div id="radio">
+                  <img
+                    id="radioImg"
+                    src="nui://alyniahud/hud/assets/images/radio.png"
+                    onerror="this.onerror = null; this.src=this.src.replace('nui://alyniahud/hud/', '');"
+                  />
+                </div>
+
+                <div id="radioTalkers">
+                  <div class="img">
+                    
+                  </div>
+                  <div class="talkers">
+                    <ul id="talkersList"></ul>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- <div class="e1-hud-bottom-b1-c2-bottom">
+                <div id="container">
+                  <section id="compass">
+                    <span class="border">|</span>
+                    <span id="direction">SO</span>
+                  </section>
+
+                  <section id="vicinity">
+                    <span id="zone">Chargement...</span>
+                    <span id="street">Chargement...</span>
+                  </section>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pressKey" style="display: none">
+        <div class="key">
+          <p id="key">Enter</p>
+        </div>
+        <p id="interact">INTERACTION</p>
+      </div>
+
+      <div class="element-1m">
+        <div class="e2-hud-top"></div>
+        <div class="e2-hud-middle">
+          <div class="login" style="display: none">
+            <img class="img-forms" src="assets/images/forms.png" />
+
+            <div class="content">
+              <div class="infos"></div>
+
+              <div class="button">
+                <div class="btn-text">SE CONNECTER</div>
+                <img src="assets/images/arrow.png" />
+              </div>
+
+              <div class="infos-heure">
+                <div class="heure">
+                  <img
+                    style="height: 12px; margin-left: 6.5px; margin-right: 3px"
+                    src="assets/images/clock.png"
+                  />
+                  <p id="hour" class="heure"></p>
+                </div>
+                <p id="date" class="heure"></p>
+                <div class="separator"></div>
+
+                <script>
+                  n = new Date();
+                  y = n.getFullYear();
+                  m = n.getMonth() + 1;
+                  d = n.getDate();
+                  document.getElementById("date").innerHTML =
+                    d + "." + m + "." + y;
+
+                  let hour = n.getHours();
+
+                  const g1 = n.getHours(); // => 9
+                  const g2 = n.getMinutes(); // =>  30
+                  document.getElementById("hour").innerHTML = g1 + ":" + g2;
+                </script>
+              </div>
+            </div>
+          </div>
+
+          <div class="reward" style="display: none">
+            <img
+              class="reward-img-forms"
+              src="https://cdn.discordapp.com/attachments/677123024146792448/927933851148369920/form.png"
+            />
+
+            <div class="reward-content">
+              <div
+                style="
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  align-self: flex-end;
+                  margin-right: 0%;
+                "
+              >
+                <img
+                  style="height: 22.5px; margin-right: 7.5px"
+                  src="https://cdn.discordapp.com/attachments/925948165318905916/927935393423302686/stats.png"
+                />
+                <p id="daysReward" style="font-size: 22px; color: #fff">
+                  3 JOURS D'AFFILÉE
+                </p>
+              </div>
+
+              <div class="reward-buttons"></div>
+
+              <div class="reward-scroool">
+                <div class="mouse">
+                  <div class="wheel"></div>
+                </div>
+                <div>
+                  <span class="unu"></span>
+                  <span class="doi"></span>
+                  <span class="trei"></span>
+                </div>
+              </div>
+
+              <div
+                style="
+                  position: relative;
+                  left: -30.2%;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  justify-content: center;
+                  opacity: 0.5;
+                "
+              >
+                <img
+                  style="margin-top: 2.5px; height: 15px; margin-right: 5px"
+                  src="https://cdn.discordapp.com/attachments/677123024146792448/928219631578124298/sasasa.png"
+                />
+                <p
+                  style="
+                    font-family: 'Bourgeois-BoldCondensed';
+                    font-size: 0.8vw;
+                    color: #fff;
+                  "
+                >
+                  = TOUS LES ROLES DISPONIBLES EN BOUTIQUE
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="e2-hud-bottom">
+          <div class="e2-hud-bottom-center">
+            <div id="safeZone" style="display: none">
+              <img
+                class="image-safezone"
+                src="nui://BackLandUI/hud/assets/images/zonesafe.png"
+                onerror="this.onerror = null; this.src=this.src.replace('nui://BackLandUI/hud/', '');"
+              />
+              <p>ZONE SAFE</p>
+            </div>
+            <div id="safeZone2" style="display: none">
+              <img
+                class="image-safezone2"
+                src="nui://BackLandUI/hud/assets/images/zonesafe2.png"
+                onerror="this.onerror = null; this.src=this.src.replace('nui://BackLandUI/hud/', '');"
+              />
+              <p>ZONE SAFE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="purge" style="display: none;" class="alyniashadow">
+      <img src="assets/images/red_flare.png" alt="" class="redflare" />
+      <img src="assets/images/blood_effect.png" alt="" class="blood" />
+      <img src="assets/images/head.png" alt="" class="head" />
+      <img src="assets/images/prime_en_cours.png" alt="" class="bigtitle" />
+      <div id="purgeReward">
+        <p id="rewardPurge">15,000</p>
+        <img src="assets/images/coin.png" class="coin" alt="" />
+      </div>
+      <img src="assets/images/eliminez.png" alt="" class="eliminate" />
+      <div id="distance">(1000m)</div>
+      <div class="distanceHolder">
+        <div class="helper"></div>
+        <div class="helper"></div>
+        <div class="helper"></div>
+      </div>
+    </div>
+    
+    <div id="coma" style="display: none">
+      <div class="flare"></div>
+
+      <p id="comaFirst">07:14</p>
+      <p id="comaSecond">EN ATTENTE D'AIDE</p>
+      <p id="comaThird">AVANT DE MOURIR</p>
+
+      <div class="callAmbulance disabled">
+        <div class="icon">
+          <img
+            src="nui://BackLandUI/hud/assets/images/ambulance.png"
+            onerror="this.onerror = null; this.src=this.src.replace('nui://BackLandUI/hud/', '');"
+          />
+        </div>
+        <div class="text">APPELER UNE AMBULANCE</div>
+      </div>
+      <div class="remainingTime">
+        <div class="icon">
+          <img
+            src="nui://BackLandUI/hud/assets/images/hourglass.png"
+            onerror="this.onerror = null; this.src=this.src.replace('nui://BackLandUI/hud/', '');"
+          />
+        </div>
+        <div class="wrapping">
+          <div id="timePercentage"></div>
+        </div>
+      </div>
+      <div class="returnToHospital" style="display: none">
+        <div class="icon">
+          <img
+            src="nui://BackLandUI/hud/assets/images/hospital.png"
+            onerror="this.onerror = null; this.src=this.src.replace('nui://BackLandUI/hud/', '');"
+          />
+        </div>
+        <div class="text">ALLER À L'HOPITAL</div>
+      </div>
+    </div>
+
+    <script src="assets/js/hud.js" type="text/javascript"></script>
+    <script src="assets/js/menu.js" type="text/javascript"></script>
+  </body>
+</html>

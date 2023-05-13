@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.datosserver {
+  position: absolute;
+  right: 2vw;
+  top: 5vw;
+}
+
+.tiempo {
+  position: absolute;
+}
+
+.hora {
+  font-size: 15px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  bottom: 3.8vw;
+  left: 350px;
+  top: 955px;
+  position: fixed;
+}
+.hour i {
+  position: fixed;
+  bottom: 3.8vw;
+  font-size: 13px;
+  left: 320px;
+  top: 975px;
+  color: white;
+}
+
+.logomoney {
+  width: 15px;
+  height: 15px;
+  position: fixed;
+  bottom: 3.8vw;
+  font-size: 13px;
+  left: 320px;
+  top: 930px;
+  color: white;
+}
+
+.day {
+  font-size: 15px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  left: 350px;
+  top: 975px;
+  position: fixed;
+}
+
+.dinero {
+  position: absolute;
+  right: 2vw;
+  top: 12vw;
+  text-align: left;
+}
+
+.dinero i {
+  font-size: 1vw;
+  color: white;
+}
+
+.money span {
+  font-size: 15px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  left: 350px;
+  top: 925px;
+  position: fixed;
+}
+
+.dinero i {
+  font-size: 15px;
+  color: white;
+  left: 350px;
+  top: 925px;
+  position: fixed;
+}
+
+
+.logitosdebala img {
+  width: 1.5vw;
+  opacity: 40%;
+  position: fixed;
+  margin-left: 5vw;
+  margin-top: -0.8vw;
+}
+
+.calle {
+  width: 10px;
+  height: 10px; 
+  position: absolute;
+}
+
+.calle i {
+  position: fixed;
+  bottom: 3.8vw;
+  font-size: 13px;
+  left: 320px;
+  top: 1020px;
+  color: white;
+}
+
+.calle h1 {
+  font-size: 15px;
+  font-weight: 200;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  bottom: 2.8vw;
+  left: 350px;
+  top: 1017px;
+  position: fixed;
+}
+
+.calle h2 {
+  font-size: 15px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  bottom: 3.8vw;
+  left: 350px;
+  top: 995px;
+  position: fixed;
+}
+
+.playerStats{
+	position: absolute;
+	left: 350px;
+	left: 18.0%;
+	top: 875px;
+}
+
+.stat{
+	color: #fff;
+	background: linear-gradient(to left, rgba(0,0,0,0) 0%,rgba(25, 111, 180, 0.158) 100%);
+	width: 220px;
+	height: 30px;
+	position: relative;
+	margin-bottom: 7px;
+	//box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+}
+
+.stat .icon{
+	height: 30px;
+	width: 30px;
+	background: linear-gradient(to left, rgba(0,0,0,0) 50%,rgba(72, 70, 42, 0.527) 50%);
+	border-radius: 50%;
+	position: relative;
+	display: inline-block;
+	right: 15px;
+}
+
+.stat .icon i, .stat .icon img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.stat .icon img{
+	height: 18px;
+	width: 18px;
+}
+
+
+.stat span{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: -10px;
+}
+
+
+.status{
+	display: flex;
+	width: 90px;
+	position: relative;
+	left: -25px;
+	justify-content: space-between;
+}
+
+.vert-stat{
+	border-radius: 50%;
+	width: 38px;
+	height: 38px;
+	position: relative;
+	overflow: hidden;
+	background-color: rgba(32,72,94,0.5);
+}
+
+.vert-stat .bg{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.vert-stat img{
+	width: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.vert-stat2{
+	border-radius: 50%;
+	width: 38px;
+	height: 38px;
+	position: relative;
+	overflow: hidden;
+	background-color: rgba(81,76,41,0.5);
+}
+
+.vert-stat2 .bg{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.vert-stat2 img{
+	width: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
