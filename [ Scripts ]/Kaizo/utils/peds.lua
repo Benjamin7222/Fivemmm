@@ -68,26 +68,7 @@ Citizen.CreateThread( function()
 	end
 end)
 
-Citizen.CreateThread(function()
-    while true do
-        for _,player in ipairs(GetActivePlayers()) do
-            local ped = GetPlayerPed(-1)
-            local everyone = GetPlayerPed(player)
-            local everyoneveh = GetVehiclePedIsUsing(everyone)
-			if IsPedInAnyVehicle(everyone, false) then
-				if GetVehicleClass(everyoneveh) ~= 14 and GetVehicleClass(everyoneveh) ~= 15 and GetVehicleClass(everyoneveh) ~= 16 then
-					SetEntityNoCollisionEntity(ped, everyoneveh, false)
-					SetEntityNoCollisionEntity(everyoneveh, ped, false)
-				end
-			else
-				if GetVehicleClass(everyoneveh) ~= 14 and GetVehicleClass(everyoneveh) ~= 15 and GetVehicleClass(everyoneveh) ~= 16 then
-					SetEntityNoCollisionEntity(ped, everyone, false)
-				end
-			end
-        end
-		Citizen.Wait(5000)
-    end
-end)
+
 
 Citizen.CreateThread(function()
 	while true do
