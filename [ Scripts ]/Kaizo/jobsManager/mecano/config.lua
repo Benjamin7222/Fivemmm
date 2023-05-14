@@ -18,11 +18,11 @@ MarkerTourne = false, -- Si le marker tourne (true = oui, false = non)
 
 --cfg_mecano Point--
 Position = {
-    Coffre = {vector3(-590.96, -929.11, 28.14)}, -- Menu coffre 
-    GarageVehicule = {vector3(-559.16, -924.4, 23.87)}, -- Menu Garage Vehicule
-    RangerVehicule = {vector3(-550.92, -914.0, 23.86)}, -- Menu ranger votre véhicule
+    Coffre = {vector3(-224.34, -1320.13, 30.89)}, -- Menu coffre 
+    GarageVehicule = {vector3(-192.42, -1290.49, 31.3)}, -- Menu Garage Vehicule
+    RangerVehicule = {vector3(-189.61, -1282.22, 31.19)}, -- Menu ranger votre véhicule
     FabricationKit = {vector3(-583.66, -914.32, 23.89)}, -- Menu Fabrication Kit
-    Vestiaire = {vector3(-564.43, -924.15, 23.89)}, -- Menu Vestiaire
+    Vestiaire = {vector3(-206.69, -1341.7, 34.89)}, -- Menu Vestiaire
 },
 
 
