@@ -1,4 +1,4 @@
-cfg_policeWebhookRendezVousPolice = "" -- Metez le webhook de votre salon disocrd cfg_policeure pour le job ems 
+cfg_policeWebhookRendezVousPolice = "https://discord.com/api/webhooks/1106562552089034823/6astPE4tqFjXRT1Z3QhHQLOJTZ2M8GH-Z9rhfIkqUqEMwzMR5n5Ums1DKn-6vsBX2Aja" -- Metez le webhook de votre salon disocrd cfg_policeure pour le job ems 
 
 
 cfg_police = {
@@ -16,14 +16,18 @@ cfg_police = {
      MarkerTourne = false, -- Si le marker tourne (true = oui, false = non)
 
  VehiculesPolice = { 
-    {buttoname = "Moto Police", rightlabel = "→→", spawnname = "policeb", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
-    {buttoname = "Moto Police 2", rightlabel = "→→", spawnname = "lspdb", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
-    {buttoname = "Vélo Police", rightlabel = "→→", spawnname = "scorcher", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
-    {buttoname = "Police Cruiser", rightlabel = "→→", spawnname = "police", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
-    {buttoname = "Bravado Buffalo", rightlabel = "→→", spawnname = "police2", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
-    {buttoname = "Vapid Cruiser", rightlabel = "→→", spawnname = "police3", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
+    {buttoname = "Stanier Police", rightlabel = "→→", spawnname = "Police", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
+    {buttoname = "Cruiser Police", rightlabel = "→→", spawnname = "police2", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
+    {buttoname = "Scout Police", rightlabel = "→→", spawnname = "pscout", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
+    {buttoname = "Scout Bana", rightlabel = "→→", spawnname = "swatstalker_hi", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
+    {buttoname = "Speedo Police", rightlabel = "→→", spawnname = "polspeedo_hi", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
+    {buttoname = "K9 Police", rightlabel = "→→", spawnname = "polsadlerk9", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
     {buttoname = "4x4 Police", rightlabel = "→→", spawnname = "poleveron", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
     {buttoname = "Buffalo Banalisé", rightlabel = "→→", spawnname = "police42old", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
+    {buttoname = "Stanier Bana", rightlabel = "→→", spawnname = "poleveron", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
+    {buttoname = "Moto Police", rightlabel = "→→", spawnname = "lspdb", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
+    {buttoname = "GND King", rightlabel = "→→", spawnname = "policeslick", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781},
+
 
     {buttoname = "Intervention | SWAT", rightlabel = "→→", spawnname = "bearcatbb", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781}, -- Garage Voiture
     {buttoname = "Anti-émeute | SWAT", rightlabel = "→→", spawnname = "mrapbb", spawnzone = vector3(443.9020690918, -992.88220214844, 25.141269683838), headingspawn = 88.67304992675781}, -- Garage Voiture
