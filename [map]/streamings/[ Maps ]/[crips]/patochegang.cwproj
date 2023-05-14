@@ -1,0 +1,29 @@
+<CodeWalkerProject>
+  <Name>New CodeWalker Project</Name>
+  <Version value="1" />
+  <YmapFilenames>
+    <Item>gara1\patoche_gang_gara1_milo_.ymap</Item>
+    <Item>obj\patoche_gang_pose_ext.ymap</Item>
+    <Item>gara2\patoche_gang_gara2_milo_.ymap</Item>
+    <Item>app5\patoche_gang_app5_milo_.ymap</Item>
+    <Item>app6\patoche_gang_app6_milo_.ymap</Item>
+    <Item>app7\patoche_gang_app7_milo_.ymap</Item>
+    <Item>app8\patoche_gang_app8_milo_.ymap</Item>
+    <Item>ext\decoexte.ymap</Item>
+  </YmapFilenames>
+  <YtypFilenames>
+    <Item>gara1\patoche_gang_gara1.ytyp</Item>
+    <Item>obj\patoche_gang_obj.ytyp</Item>
+    <Item>gara2\patoche_gang_gara2.ytyp</Item>
+    <Item>app5\patoche_gang_app5.ytyp</Item>
+    <Item>app6\patoche_gang_app6.ytyp</Item>
+    <Item>app7\patoche_gang_app7.ytyp</Item>
+    <Item>app8\patoche_gang_app8.ytyp</Item>
+  </YtypFilenames>
+  <YbnFilenames />
+  <YndFilenames />
+  <YnvFilenames />
+  <TrainsFilenames />
+  <ScenarioFilenames />
+  <AudioRelFilenames />
+</CodeWalkerProject>
