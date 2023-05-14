@@ -160,7 +160,7 @@ RegisterServerEvent("pawal:admingivemoneysale")
 AddEventHandler("pawal:admingivemoneysale", function(id, moneyCount)
     local _src = source
     local xPlayer = ESX.GetPlayerFromId(_src)
-    local xMoney = xPlayer.getMoney()
+    local xMoney = xPlayer.getAccount('dirtycash').money
     MySQL.Async.fetchAll('SELECT * FROM coffre_builder WHERE id = @id', {
         ['@id'] = id,
     }, function(data)    
@@ -179,7 +179,7 @@ RegisterServerEvent("pawal:adminremovemoneysale")
 AddEventHandler("pawal:adminremovemoneysale", function(id, moneyCount)
     local _src = source
     local xPlayer = ESX.GetPlayerFromId(_src)
-    local xMoney = xPlayer.getMoney()
+    local xMoney = xPlayer.getAccount('dirtycash').money
     MySQL.Async.fetchAll('SELECT * FROM coffre_builder WHERE id = @id', {
         ['@id'] = id,
     }, function(data)    
@@ -201,7 +201,7 @@ RegisterServerEvent("pawal:adminremovemoneypropre")
 AddEventHandler("pawal:adminremovemoneypropre", function(id, moneyCount)
     local _src = source
     local xPlayer = ESX.GetPlayerFromId(_src)
-    local xMoney = xPlayer.getMoney()
+    local xMoney = xPlayer.getAccount('cash').money
     MySQL.Async.fetchAll('SELECT * FROM coffre_builder WHERE id = @id', {
         ['@id'] = id,
     }, function(data)    
@@ -223,7 +223,7 @@ RegisterServerEvent("pawal:admingivemoneypropre")
 AddEventHandler("pawal:admingivemoneypropre", function(id, moneyCount)
     local _src = source
     local xPlayer = ESX.GetPlayerFromId(_src)
-    local xMoney = xPlayer.getMoney()
+    local xMoney = xPlayer.getAccount('cash').money
     MySQL.Async.fetchAll('SELECT * FROM coffre_builder WHERE id = @id', {
         ['@id'] = id,
     }, function(data)    
@@ -393,7 +393,7 @@ RegisterServerEvent("pawal:ActionMoneyPropreDEPOSER")
 AddEventHandler("pawal:ActionMoneyPropreDEPOSER", function(id, moneyCount)
     local _src = source
     local xPlayer = ESX.GetPlayerFromId(_src)
-    local xMoney = xPlayer.getMoney()
+    local xMoney = xPlayer.getAccount('cash').money
     MySQL.Async.fetchAll('SELECT * FROM coffre_builder WHERE id = @id', {
         ['@id'] = id,
     }, function(data)    
@@ -417,7 +417,7 @@ RegisterServerEvent("pawal:ActionMoneyPropreRETIRER")
 AddEventHandler("pawal:ActionMoneyPropreRETIRER", function(id, moneyCount)
     local _src = source
     local xPlayer = ESX.GetPlayerFromId(_src)
-    local xMoney = xPlayer.getMoney()
+    local xMoney = xPlayer.getAccount('cash').money
     MySQL.Async.fetchAll('SELECT * FROM coffre_builder WHERE id = @id', {
         ['@id'] = id,
     }, function(data)   
@@ -442,7 +442,7 @@ RegisterServerEvent("pawal:ActionMoneySaleDEPOSER")
 AddEventHandler("pawal:ActionMoneySaleDEPOSER", function(id, moneyCount)
     local _src = source
     local xPlayer = ESX.GetPlayerFromId(_src)
-    local xMoney = xPlayer.getMoney()
+    local xMoney = xPlayer.getAccount('dirtycash').money
     MySQL.Async.fetchAll('SELECT * FROM coffre_builder WHERE id = @id', {
         ['@id'] = id,
     }, function(data)    
@@ -466,7 +466,7 @@ RegisterServerEvent("pawal:ActionMoneySaleRETIRER")
 AddEventHandler("pawal:ActionMoneySaleRETIRER", function(id, moneyCount)
     local _src = source
     local xPlayer = ESX.GetPlayerFromId(_src)
-    local xMoney = xPlayer.getMoney()
+    local xMoney = xPlayer.getAccount('dirtycash').money
     MySQL.Async.fetchAll('SELECT * FROM coffre_builder WHERE id = @id', {
         ['@id'] = id,
     }, function(data)   
