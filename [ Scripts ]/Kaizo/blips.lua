@@ -21,8 +21,6 @@ Map = {
         {name="~b~Entreprise ~s~| Ocean Hospital",color=3, id=61,ZoneBlip = false, Position = vector3(-1867.28, -352.62, 58.03)},
         {name="~b~Entreprise ~s~| Gouvernement",color=31, id=304,ZoneBlip = false, Position = vector3(-546.73553, -202.9565, 47.41)},
         {name="~b~Entreprise ~s~| Police",color=29, id=60,ZoneBlip = false, Position = vector3(438.79, -981.99, 30.69)},
-        {name="~b~Entreprise ~s~| LS Army",color=2, id=569,ZoneBlip = false, Position = vector3(-2343.8032226563, 3267.0017089844, 32.810768127441)},
-        {name="~b~Entreprise ~s~| Sheriff",color=25, id=137,ZoneBlip = false, Position = vector3(-439.86, 6010.64, 37.0)},
     }
     
     Citizen.CreateThread(function()
