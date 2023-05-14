@@ -82,7 +82,7 @@ function OpenArmuriePolice()
 ----OUVRIR LE MENU------------
 
 local position = {
-	{x = 479.0859, y = -996.757, z = 30.69}
+	{x = 453.6439, y = -994.707, z = 35.062}
 }
 
 Citizen.CreateThread(function()
@@ -100,7 +100,7 @@ Citizen.CreateThread(function()
 
             if dist <= 10.0 then
             wait = 0
-            DrawMarker(cfg_police.MarkerType, 479.0859, -996.757,  30.69-0.98, 0.0, 0.0, 0.0, -90.0,0.0,0.0, cfg_police.MarkerSizeLargeur, cfg_police.MarkerSizeEpaisseur, cfg_police.MarkerSizeHauteur, cfg_police.MarkerColorR, cfg_police.MarkerColorG, cfg_police.MarkerColorB, cfg_police.MarkerOpacite, cfg_police.MarkerSaute, true, p19, cfg_police.MarkerTourne)  
+            DrawMarker(cfg_police.MarkerType, 453.6439, -994.707, 35.062, 0.0, 0.0, 0.0, -90.0,0.0,0.0, cfg_police.MarkerSizeLargeur, cfg_police.MarkerSizeEpaisseur, cfg_police.MarkerSizeHauteur, cfg_police.MarkerColorR, cfg_police.MarkerColorG, cfg_police.MarkerColorB, cfg_police.MarkerOpacite, cfg_police.MarkerSaute, true, p19, cfg_police.MarkerTourne)  
 
         
             if dist <= 1.0 then
