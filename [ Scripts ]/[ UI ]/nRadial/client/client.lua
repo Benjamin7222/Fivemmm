@@ -9,7 +9,7 @@ local ouvert = false
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        local keybindControl = keybindControls["F1"]
+        local keybindControl = keybindControls["F2"]
         if IsControlPressed(0, keybindControl) then
             menuOn = true
             SendNUIMessage({

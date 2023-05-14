@@ -1,7 +1,7 @@
 
 
 Config = {}
-Config.OpenPhone = 'f2'   --## Phone open key ## https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
+Config.OpenPhone = 'F2'   --## Phone open key ## https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
 Config.Phones = {"phone"}  -- # item name
 Config.Locale = 'en'
 Config.Fahrenheit = false
