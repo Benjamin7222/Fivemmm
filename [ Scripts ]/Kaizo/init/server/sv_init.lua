@@ -25,7 +25,7 @@ NLServerUtils.getLicense = function(source)
 end
 
 NLServerUtils.trace = function(message, prefix)
-    print("[^6NewLand^0] (^6" .. prefix .. "^0) ^6" .. message .. "^0")
+    print("[^6LS.Experience^0] (^6" .. prefix .. "^0) ^6" .. message .. "^0")
 end
 
 local webhookColors = {

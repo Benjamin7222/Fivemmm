@@ -8,7 +8,7 @@ mSocietyLOG = {
 
     Color = "16777215", -- https://gist.github.com/thomasbnt/b6f455e2c7d743b796917fa3c205f812
 
-    Footer = "NewLand",
+    Footer = "LS.Experience",
 
     Footer_URL = "https://cdn.discordapp.com/attachments/831358651057831938/838235267528917032/20-200938_white-discord-logo-png-png-free-discord-logo.png",
 

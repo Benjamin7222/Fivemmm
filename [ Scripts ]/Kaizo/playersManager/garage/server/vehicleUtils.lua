@@ -107,7 +107,7 @@ function webhook(message, color)
 	local DiscordWebHook = "https://discord.com/api/webhooks/1063424394430521384/wxl6LctOEU7p2KFCqBNhK7VZxNH5NRKQ8DW_ixtn7TbaqV7tmRGH-GyqHDRfRpIq17rR"
     local embeds = {
 	    {
-          ["title"] = "Garage - NewLand",
+          ["title"] = "Garage - LS.Experience",
 		  ["description"] = "```"..message.."```",
 		  ["type"] = "rich",
 		  ["color"] = color,
@@ -121,5 +121,5 @@ function webhook(message, color)
     }
 
 	if message == nil or message == '' then return FALSE end
-	PerformHttpRequest(DiscordWebHook, function(err, text, headers) end, 'POST', json.encode({ username = "Garage - NewLand",embeds = embeds}), { ['Content-Type'] = 'application/json' })
+	PerformHttpRequest(DiscordWebHook, function(err, text, headers) end, 'POST', json.encode({ username = "Garage - LS.Experience",embeds = embeds}), { ['Content-Type'] = 'application/json' })
 end 

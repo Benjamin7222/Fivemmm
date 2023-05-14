@@ -304,7 +304,7 @@ end
 		Citizen.Wait(50)
 	end
 	Citizen.Wait(0)
-	deferrals.update(('Bienvenue sur NewLand, %s !'):format(playerName))
+	deferrals.update(('Bienvenue sur LS.Experience, %s !'):format(playerName))
 	Citizen.Wait(5000)
 
 	if identifier then
@@ -367,15 +367,15 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 				sourceXPlayer.removeInventoryItem(itemName, itemCount)
 				targetXPlayer.addInventoryItem(itemName, itemCount)
 
-				sourceXPlayer.showAdvancedNotification("NewLand", "Inventaire", _U('gave_item', itemCount, ESX.Items[itemName].label, targetXPlayer.name), 'CHAR_SEALIFE', 7)
-				targetXPlayer.showAdvancedNotification("NewLand", "Inventaire", _U('received_item', itemCount, ESX.Items[itemName].label, sourceXPlayer.name), 'CHAR_SEALIFE', 7)
+				sourceXPlayer.showAdvancedNotification("LS.Experience", "Inventaire", _U('gave_item', itemCount, ESX.Items[itemName].label, targetXPlayer.name), 'CHAR_SEALIFE', 7)
+				targetXPlayer.showAdvancedNotification("LS.Experience", "Inventaire", _U('received_item', itemCount, ESX.Items[itemName].label, sourceXPlayer.name), 'CHAR_SEALIFE', 7)
 
 				TriggerEvent("esx:giveitemalert", sourceXPlayer.name, targetXPlayer.name, itemName, itemCount)
 			else
-				sourceXPlayer.showAdvancedNotification("NewLand", "Inventaire", _U('ex_inv_lim', targetXPlayer.name), 'CHAR_SEALIFE', 7)
+				sourceXPlayer.showAdvancedNotification("LS.Experience", "Inventaire", _U('ex_inv_lim', targetXPlayer.name), 'CHAR_SEALIFE', 7)
 			end
 		else
-			sourceXPlayer.showAdvancedNotification("NewLand", "Inventaire", _U('imp_invalid_quantity'), 'CHAR_SEALIFE', 7)
+			sourceXPlayer.showAdvancedNotification("LS.Experience", "Inventaire", _U('imp_invalid_quantity'), 'CHAR_SEALIFE', 7)
 		end
 	elseif type == 'item_account' then
 		if itemCount > 0 and sourceXPlayer.getAccount(itemName).money >= itemCount then
@@ -384,12 +384,12 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 			sourceXPlayer.removeAccountMoney(itemName, itemCount)
 			targetXPlayer.addAccountMoney(itemName, itemCount)
 
-			sourceXPlayer.showAdvancedNotification("NewLand", "Portefeuille", _U('gave_account_money', ESX.Math.GroupDigits(itemCount), accountLabel, targetXPlayer.name), 'CHAR_SEALIFE', 9)
-			targetXPlayer.showAdvancedNotification("NewLand", "Portefeuille", _U('received_account_money', ESX.Math.GroupDigits(itemCount), accountLabel, sourceXPlayer.name), 'CHAR_SEALIFE', 9)
+			sourceXPlayer.showAdvancedNotification("LS.Experience", "Portefeuille", _U('gave_account_money', ESX.Math.GroupDigits(itemCount), accountLabel, targetXPlayer.name), 'CHAR_SEALIFE', 9)
+			targetXPlayer.showAdvancedNotification("LS.Experience", "Portefeuille", _U('received_account_money', ESX.Math.GroupDigits(itemCount), accountLabel, sourceXPlayer.name), 'CHAR_SEALIFE', 9)
 
 			TriggerEvent("esx:giveaccountalert", sourceXPlayer.name, targetXPlayer.name, itemName, itemCount)
 		else
-			sourceXPlayer.showAdvancedNotification("NewLand", "Portefeuille", _U('imp_invalid_amount'), 'CHAR_SEALIFE', 9)
+			sourceXPlayer.showAdvancedNotification("LS.Experience", "Portefeuille", _U('imp_invalid_amount'), 'CHAR_SEALIFE', 9)
 		end
 	elseif type == 'item_weapon' then
 		itemName = string.upper(itemName)
@@ -405,17 +405,17 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 				targetXPlayer.addWeapon(itemName, itemCount)
 
 				if itemCount > 0 then
-					sourceXPlayer.showAdvancedNotification("NewLand", "Armes", _U('gave_weapon_withammo', weaponLabel, itemCount, targetXPlayer.name), 'CHAR_SEALIFE', 7)
-					targetXPlayer.showAdvancedNotification("NewLand", "Armes", _U('received_weapon_withammo', weaponLabel, itemCount, sourceXPlayer.name), 'CHAR_SEALIFE', 7)
+					sourceXPlayer.showAdvancedNotification("LS.Experience", "Armes", _U('gave_weapon_withammo', weaponLabel, itemCount, targetXPlayer.name), 'CHAR_SEALIFE', 7)
+					targetXPlayer.showAdvancedNotification("LS.Experience", "Armes", _U('received_weapon_withammo', weaponLabel, itemCount, sourceXPlayer.name), 'CHAR_SEALIFE', 7)
 				else
-					sourceXPlayer.showAdvancedNotification("NewLand", "Armes", _U('gave_weapon', weaponLabel, targetXPlayer.name), 'CHAR_SEALIFE', 7)
-					targetXPlayer.showAdvancedNotification("NewLand", "Armes", _U('received_weapon', weaponLabel, sourceXPlayer.name), 'CHAR_SEALIFE', 7)
+					sourceXPlayer.showAdvancedNotification("LS.Experience", "Armes", _U('gave_weapon', weaponLabel, targetXPlayer.name), 'CHAR_SEALIFE', 7)
+					targetXPlayer.showAdvancedNotification("LS.Experience", "Armes", _U('received_weapon', weaponLabel, sourceXPlayer.name), 'CHAR_SEALIFE', 7)
 
 					TriggerEvent("esx:giveweaponalert", sourceXPlayer.name, targetXPlayer.name, itemName)
 				end
 			else
-				sourceXPlayer.showAdvancedNotification("NewLand", "Armes", _U('gave_weapon_hasalready', targetXPlayer.name, weaponLabel), 'CHAR_SEALIFE', 7)
-				targetXPlayer.showAdvancedNotification("NewLand", "Armes", _U('received_weapon_hasalready', sourceXPlayer.name, weaponLabel), 'CHAR_SEALIFE', 7)
+				sourceXPlayer.showAdvancedNotification("LS.Experience", "Armes", _U('gave_weapon_hasalready', targetXPlayer.name, weaponLabel), 'CHAR_SEALIFE', 7)
+				targetXPlayer.showAdvancedNotification("LS.Experience", "Armes", _U('received_weapon_hasalready', sourceXPlayer.name, weaponLabel), 'CHAR_SEALIFE', 7)
 			end
 		end
 	elseif type == 'item_ammo' then
@@ -449,35 +449,35 @@ AddEventHandler('esx:dropInventoryItem', function(type, itemName, itemCount)
 
 	if type == 'item_standard' then
 		if itemCount == nil or itemCount < 1 then
-			xPlayer.showAdvancedNotification("NewLand", "Inventaire", _U('imp_invalid_quantity'), 'CHAR_SEALIFE', 7)
+			xPlayer.showAdvancedNotification("LS.Experience", "Inventaire", _U('imp_invalid_quantity'), 'CHAR_SEALIFE', 7)
 		else
 			local xItem = xPlayer.getInventoryItem(itemName)
 
 			if (itemCount > xItem.count or xItem.count < 1) then
-				xPlayer.showAdvancedNotification("NewLand", "Inventaire", _U('imp_invalid_quantity'), 'CHAR_SEALIFE', 7)
+				xPlayer.showAdvancedNotification("LS.Experience", "Inventaire", _U('imp_invalid_quantity'), 'CHAR_SEALIFE', 7)
 			else
 				xPlayer.removeInventoryItem(itemName, itemCount)
 
 				--local pickupLabel = ('%s~s~ [~b~%s~s~]'):format(ESX.Items[itemName].label, itemCount)
 				--ESX.CreatePickup('item_standard', itemName, itemCount, pickupLabel, _source)
-				xPlayer.showAdvancedNotification("NewLand", "Inventaire", _U('threw_standard', itemCount, ESX.Items[itemName].label), 'CHAR_SEALIFE', 7)
+				xPlayer.showAdvancedNotification("LS.Experience", "Inventaire", _U('threw_standard', itemCount, ESX.Items[itemName].label), 'CHAR_SEALIFE', 7)
 			end
 		end
 	elseif type == 'item_account' then
 		if itemCount == nil or itemCount < 1 then
-			xPlayer.showAdvancedNotification("NewLand", "Portefeuille", _U('imp_invalid_amount'), 'CHAR_SEALIFE', 9)
+			xPlayer.showAdvancedNotification("LS.Experience", "Portefeuille", _U('imp_invalid_amount'), 'CHAR_SEALIFE', 9)
 		else
 			local account = xPlayer.getAccount(itemName)
 			local accountLabel = ESX.GetAccountLabel(itemName)
 
 			if (itemCount > account.money or account.money < 1) then
-				xPlayer.showAdvancedNotification("NewLand", "Portefeuille", _U('imp_invalid_amount'), 'CHAR_SEALIFE', 9)
+				xPlayer.showAdvancedNotification("LS.Experience", "Portefeuille", _U('imp_invalid_amount'), 'CHAR_SEALIFE', 9)
 			else
 				xPlayer.removeAccountMoney(itemName, itemCount)
 
 				--local pickupLabel = ('%s~s~ [~g~%s~s~]'):format(accountLabel, _U('locale_currency', ESX.Math.GroupDigits(itemCount)))
 				--ESX.CreatePickup('item_account', itemName, itemCount, pickupLabel, _source)
-				xPlayer.showAdvancedNotification("NewLand", "Portefeuille", _U('threw_account', ESX.Math.GroupDigits(itemCount), string.lower(accountLabel)), 'CHAR_SEALIFE', 9)
+				xPlayer.showAdvancedNotification("LS.Experience", "Portefeuille", _U('threw_account', ESX.Math.GroupDigits(itemCount), string.lower(accountLabel)), 'CHAR_SEALIFE', 9)
 			end
 		end
 	elseif type == 'item_weapon' then
@@ -491,9 +491,9 @@ AddEventHandler('esx:dropInventoryItem', function(type, itemName, itemCount)
 			--ESX.CreatePickup('item_weapon', itemName, weapon.ammo, pickupLabel, _source, weapon.components)
 
 			if weapon.ammo > 0 then
-				xPlayer.showAdvancedNotification("NewLand", "Armes", _U('threw_weapon_ammo', weapon.label, weapon.ammo), 'CHAR_SEALIFE', 7)
+				xPlayer.showAdvancedNotification("LS.Experience", "Armes", _U('threw_weapon_ammo', weapon.label, weapon.ammo), 'CHAR_SEALIFE', 7)
 			else
-				xPlayer.showAdvancedNotification("NewLand", "Armes", _U('threw_weapon', weapon.label), 'CHAR_SEALIFE', 7)
+				xPlayer.showAdvancedNotification("LS.Experience", "Armes", _U('threw_weapon', weapon.label), 'CHAR_SEALIFE', 7)
 			end
 		end
 	end
@@ -510,7 +510,7 @@ AddEventHandler('esx:useItem', function(itemName)
 		if xItem.count > 0 then
 			ESX.UseItem(xPlayer.source, itemName)
 		else
-			xPlayer.showAdvancedNotification("NewLand", "Inventaire", _U('act_imp'), 'CHAR_SEALIFE', 7)
+			xPlayer.showAdvancedNotification("LS.Experience", "Inventaire", _U('act_imp'), 'CHAR_SEALIFE', 7)
 		end
 	else
 		print('[es_extended] : ' .. xPlayer.source .. 'tried to use item : ' .. itemName)

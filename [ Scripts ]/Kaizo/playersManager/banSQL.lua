@@ -46,12 +46,12 @@ AddEventHandler('playerConnecting', function(playerName, setKickReason, deferral
 	IsBanned(licenseid, function(isBanned, banData)
 		if isBanned then
 			if tonumber(banData.permanent) == 1 then
-				deferrals.done(('Vous êtes banni de '.. GetConvar("servername", "NewLand") ..'\nRaison : %s\nTemps Restant : Permanent\nAuteur : %s'):format(banData.reason, banData.sourceName))
+				deferrals.done(('Vous êtes banni de '.. GetConvar("servername", "LS.Experience") ..'\nRaison : %s\nTemps Restant : Permanent\nAuteur : %s'):format(banData.reason, banData.sourceName))
 				TriggerEvent('esx:customDiscordLog', ('Tentative de Connexion du Joueur : %s (%s)\nRaison : %s\nTemps Restant : Permanent\nAuteur : %s'):format(playerName, licenseid, banData.reason, banData.sourceName), 'Ban Info')
 			else
 				if tonumber(banData.expiration) > os.time() then
 					local timeRemaining = tonumber(banData.expiration) - os.time()
-					deferrals.done(('Vous êtes banni de '.. GetConvar("servername", "NewLand") ..'\nRaison : %s\nTemps Restant : %s\nAuteur : %s'):format(banData.reason, SexyTime(timeRemaining), banData.sourceName))
+					deferrals.done(('Vous êtes banni de '.. GetConvar("servername", "LS.Experience") ..'\nRaison : %s\nTemps Restant : %s\nAuteur : %s'):format(banData.reason, SexyTime(timeRemaining), banData.sourceName))
 					TriggerEvent('esx:customDiscordLog', ('Tentative de Connexion du Joueur : %s (%s)\nRaison : %s\nTemps Restant : %s\nAuteur : %s'):format(playerName, licenseid, banData.reason, SexyTime(timeRemaining), banData.sourceName), 'Ban Info')
 				else
 					DeleteBan(licenseid)
@@ -85,10 +85,10 @@ AddEventHandler('BanSql:ICheatClient', function(reason)
 			end
 
 			AddBan(_source, licenseid, playerip, name, 'Anti-Cheat Predator', 0, reason, 1)
-			DropPlayer(_source, ('Vous êtes banni de '.. GetConvar("servername", "NewLand") ..'\nRaison : %s\nTemps Restant : Permanent\nAuteur : Anti-Cheat '.. GetConvar("servername", "NewLand") ..''):format(reason))
+			DropPlayer(_source, ('Vous êtes banni de '.. GetConvar("servername", "LS.Experience") ..'\nRaison : %s\nTemps Restant : Permanent\nAuteur : Anti-Cheat '.. GetConvar("servername", "LS.Experience") ..''):format(reason))
 		end
 	else
-		print('BanSql Error : Anti-Cheat '.. GetConvar("servername", "NewLand") ..' have received invalid id.')
+		print('BanSql Error : Anti-Cheat '.. GetConvar("servername", "LS.Experience") ..' have received invalid id.')
 	end
 end)
 
@@ -110,8 +110,8 @@ AddEventHandler('BanSql:ICheatServer', function(target, reason)
 				licenseid = 'N/A'
 			end
 
-			AddBan(target, licenseid, playerip, name, 'Anti-Cheat '.. GetConvar("servername", "NewLand") ..'', 0, reason, 1)
-			DropPlayer(target, ('Vous êtes banni de '.. GetConvar("servername", "NewLand") ..'\nRaison : %s\nTemps Restant : Permanent\nAuteur : Anti-Cheat '.. GetConvar("servername", "NewLand") ..''):format(reason))
+			AddBan(target, licenseid, playerip, name, 'Anti-Cheat '.. GetConvar("servername", "LS.Experience") ..'', 0, reason, 1)
+			DropPlayer(target, ('Vous êtes banni de '.. GetConvar("servername", "LS.Experience") ..'\nRaison : %s\nTemps Restant : Permanent\nAuteur : Anti-Cheat '.. GetConvar("servername", "LS.Experience") ..''):format(reason))
 		end
 	else
 		print('BanSql Error : Anti-Cheat Predator have received invalid id.')
@@ -218,10 +218,10 @@ AddEventHandler("SqlBan:MasterLuaBan", function(id, temps, raison, sourcebase)
 
 				if expiration > 0 then
 					AddBan(sourcebase, licenseid, playerip, targetName, sourceName, expiration, reason, 0)
-					DropPlayer(target, ('Vous êtes banni de '.. GetConvar("servername", "NewLand") ..'\nRaison : %s\nTemps Restant : %s\nAuteur : %s'):format(reason, SexyTime(expiration * 3600), sourceName))
+					DropPlayer(target, ('Vous êtes banni de '.. GetConvar("servername", "LS.Experience") ..'\nRaison : %s\nTemps Restant : %s\nAuteur : %s'):format(reason, SexyTime(expiration * 3600), sourceName))
 				else
 					AddBan(sourcebase, licenseid, playerip, targetName, sourceName, expiration, reason, 1)
-					DropPlayer(target, ('Vous êtes banni de '.. GetConvar("servername", "NewLand") ..'\nRaison : %s\nTemps Restant : Permanent\nAuteur : %s'):format(reason, sourceName))
+					DropPlayer(target, ('Vous êtes banni de '.. GetConvar("servername", "LS.Experience") ..'\nRaison : %s\nTemps Restant : Permanent\nAuteur : %s'):format(reason, sourceName))
 				end
 			else
 			--	SendMessage(source, Locale.invalidtime)
@@ -260,10 +260,10 @@ ESX.AddGroupCommand('sqlban', 'admin', function(source, args, user)
 
 				if expiration > 0 then
 					AddBan(source, licenseid, playerip, targetName, sourceName, expiration, reason, 0)
-					DropPlayer(target, ('Vous êtes banni de '.. GetConvar("servername", "NewLand") ..'\nRaison : %s\nTemps Restant : %s\nAuteur : %s'):format(reason, SexyTime(expiration * 3600), sourceName))
+					DropPlayer(target, ('Vous êtes banni de '.. GetConvar("servername", "LS.Experience") ..'\nRaison : %s\nTemps Restant : %s\nAuteur : %s'):format(reason, SexyTime(expiration * 3600), sourceName))
 				else
 					AddBan(source, licenseid, playerip, targetName, sourceName, expiration, reason, 1)
-					DropPlayer(target, ('Vous êtes banni de '.. GetConvar("servername", "NewLand") ..'\nRaison : %s\nTemps Restant : Permanent\nAuteur : %s'):format(reason, sourceName))
+					DropPlayer(target, ('Vous êtes banni de '.. GetConvar("servername", "LS.Experience") ..'\nRaison : %s\nTemps Restant : Permanent\nAuteur : %s'):format(reason, sourceName))
 				end
 			else
 				SendMessage(source, Locale.invalidtime)

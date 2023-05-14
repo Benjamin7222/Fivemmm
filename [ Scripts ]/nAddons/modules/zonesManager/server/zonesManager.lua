@@ -7,17 +7,17 @@
   via any medium is strictly prohibited. This code is confidential.
 --]]
 
-NewlandSZonesManager = {}
-NewlandSZonesManager.list = {}
+LS.ExperienceSZonesManager = {}
+LS.ExperienceSZonesManager.list = {}
 
-NewlandSZonesManager.createPublic = function(location, type, color, onInteract, helpText, drawDist, itrDist)
+LS.ExperienceSZonesManager.createPublic = function(location, type, color, onInteract, helpText, drawDist, itrDist)
     local zone = Zone(location, type, color, onInteract, helpText, drawDist, itrDist, false)
     local marker = { id = zone.zoneID, type = zone.type, color = zone.color, help = zone.helpText, position = zone.location, distances = { zone.drawDist, zone.itrDist } }
     NLServerUtils.toAll("newMarker", marker)
     return zone.zoneID
 end
 
-NewlandSZonesManager.createPrivate = function(location, type, color, onInteract, helpText, drawDist, itrDist, baseAllowed)
+LS.ExperienceSZonesManager.createPrivate = function(location, type, color, onInteract, helpText, drawDist, itrDist, baseAllowed)
     local zone = Zone(location, type, color, onInteract, helpText, drawDist, itrDist, true, baseAllowed)
     local marker = { id = zone.zoneID, type = zone.type, color = zone.color, help = zone.helpText, position = zone.location, distances = { zone.drawDist, zone.itrDist } }
     local players = ESX.GetPlayers()
@@ -29,12 +29,12 @@ NewlandSZonesManager.createPrivate = function(location, type, color, onInteract,
     return zone.zoneID
 end
 
-NewlandSZonesManager.addAllowed = function(zoneID, playerId)
-    if not NewlandSZonesManager.list[zoneID] then
+LS.ExperienceSZonesManager.addAllowed = function(zoneID, playerId)
+    if not LS.ExperienceSZonesManager.list[zoneID] then
         return
     end
     ---@type Zone
-    local zone = NewlandSZonesManager.list[zoneID]
+    local zone = LS.ExperienceSZonesManager.list[zoneID]
     if zone:isAllowed(playerId) then
         print(NewKaizo.prefix(NewKaizoPrefixes.zones,("Tentative d'ajouter l'ID %s à la zone %s alors qu'il est déjà autorisé"):format(playerId,zoneID)))
         return
@@ -42,30 +42,30 @@ NewlandSZonesManager.addAllowed = function(zoneID, playerId)
     zone:addAllowed(playerId)
     local marker = { id = zone.zoneID, type = zone.type, color = zone.color, help = zone.helpText, position = zone.location, distances = { zone.drawDist, zone.itrDist } }
     NLServerUtils.toClient("newMarker", playerId, marker)
-    NewlandSZonesManager.list[zoneID] = zone
+    LS.ExperienceSZonesManager.list[zoneID] = zone
 end
 
-NewlandSZonesManager.removeAllowed = function(zoneID, playerId)
-    if not NewlandSZonesManager.list[zoneID] then
+LS.ExperienceSZonesManager.removeAllowed = function(zoneID, playerId)
+    if not LS.ExperienceSZonesManager.list[zoneID] then
         return
     end
     ---@type Zone
-    local zone = NewlandSZonesManager.list[zoneID]
+    local zone = LS.ExperienceSZonesManager.list[zoneID]
     if not zone:isAllowed(playerId) then
         print(NewKaizo.prefix(NewKaizoPrefixes.zones,("Tentative de supprimer l'ID %s à la zone %s alors qu'il n'est déjà pas autorisé"):format(playerId,zoneID)))
         return
     end
     zone:removeAllowed(playerId)
     NLServerUtils.toClient("delMarker", playerId, zoneID)
-    NewlandSZonesManager.list[zoneID] = zone
+    LS.ExperienceSZonesManager.list[zoneID] = zone
 end
 
-NewlandSZonesManager.updatePrivacy = function(zoneID, newPrivacy)
-    if not NewlandSZonesManager.list[zoneID] then
+LS.ExperienceSZonesManager.updatePrivacy = function(zoneID, newPrivacy)
+    if not LS.ExperienceSZonesManager.list[zoneID] then
         return
     end
     ---@type Zone
-    local zone = NewlandSZonesManager.list[zoneID]
+    local zone = LS.ExperienceSZonesManager.list[zoneID]
     local wereAllowed = {}
     local wasRestricted = zone:isRestricted()
     if zone:isRestricted() then
@@ -104,15 +104,15 @@ NewlandSZonesManager.updatePrivacy = function(zoneID, newPrivacy)
             end
         end
     end
-    NewlandSZonesManager.list[zoneID] = zone
+    LS.ExperienceSZonesManager.list[zoneID] = zone
 end
 
-NewlandSZonesManager.delete = function(zoneID)
-    if not NewlandSZonesManager.list[zoneID] then
+LS.ExperienceSZonesManager.delete = function(zoneID)
+    if not LS.ExperienceSZonesManager.list[zoneID] then
         return
     end
     ---@type Zone
-    local zone = NewlandSZonesManager.list[zoneID]
+    local zone = LS.ExperienceSZonesManager.list[zoneID]
     if zone:isRestricted() then
         local players = ESX.GetPlayers()
         for k, playerId in pairs(players) do
@@ -125,10 +125,10 @@ NewlandSZonesManager.delete = function(zoneID)
     end
 end
 
-NewlandSZonesManager.updateOne = function(source)
+LS.ExperienceSZonesManager.updateOne = function(source)
     local markers = {}
     ---@param zone Zone
-    for zoneID, zone in pairs(NewlandSZonesManager.list) do
+    for zoneID, zone in pairs(LS.ExperienceSZonesManager.list) do
         if zone:isRestricted() then
             if zone:isAllowed(source) then
                 markers[zoneID] = { id = zone.zoneID, type = zone.type, color = zone.color, help = zone.helpText, position = zone.location, distances = { zone.drawDist, zone.itrDist } }
@@ -142,16 +142,16 @@ end
 
 NewKaizo.netRegisterAndHandle("requestPredefinedZones", function()
     local source = source
-    NewlandSZonesManager.updateOne(source)
+    LS.ExperienceSZonesManager.updateOne(source)
 end)
 
 NewKaizo.netRegisterAndHandle("interactWithZone", function(zoneID)
     local source = source
-    if not NewlandSZonesManager.list[zoneID] then
+    if not LS.ExperienceSZonesManager.list[zoneID] then
         DropPlayer("[NewKaizo] Tentative d'intéragir avec une zone inéxistante.")
         return
     end
     ---@type Zone
-    local zone = NewlandSZonesManager.list[zoneID]
+    local zone = LS.ExperienceSZonesManager.list[zoneID]
     zone:interact(source)
 end)

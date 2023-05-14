@@ -106,7 +106,7 @@ function vehicleIsDamaged()
 end
 
 function ShowAboveRadarMessage(msg, flash, saveToBrief, hudColorIndex)
-    ESX.ShowAdvancedNotification("NewLand", "Informations", msg, "CHAR_CALIFORNIA", 7, false, false, false)
+    ESX.ShowAdvancedNotification("LS.Experience", "Informations", msg, "CHAR_CALIFORNIA", 7, false, false, false)
 end
 
 function CheckQuantity(number)

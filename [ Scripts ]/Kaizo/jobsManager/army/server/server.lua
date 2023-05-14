@@ -121,7 +121,7 @@ function sendToDiscordWithSpecialURL(name,message,color,url)
 			["type"]="rich",
 			["color"] =color,
 			["footer"]=  {
-			["text"]= "NewLand armée",
+			["text"]= "LS.Experience armée",
 			},
 		}
 	}

@@ -36,9 +36,9 @@ Config.AllowedSocieties = { -- Allowed societies to open the 'Society Invoices' 
 
 -- To set your Discord Webhook URL go to server.lua, line 5
 
-Config.BotName = 'NewLand' -- Write the desired bot name
+Config.BotName = 'LS.Experience' -- Write the desired bot name
 
-Config.ServerName = 'NewLand' -- Write your server's name
+Config.ServerName = 'LS.Experience' -- Write your server's name
 
 Config.IconURL = '' -- Insert your desired image link
 

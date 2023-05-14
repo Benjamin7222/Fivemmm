@@ -73,7 +73,7 @@ function StartCreatorEndCinematic()
 	DisplayRadar(true)
 	DoScreenFadeIn(1000)
 	Wait(1000)
-    ESX.ShowNotification("Nous vous souhaitons la bienvenue sur NewLand !")
+    ESX.ShowNotification("Nous vous souhaitons la bienvenue sur LS.Experience !")
     TriggerEvent('instance:leave')
     TriggerServerEvent('BoutiqueBucket:SetEntitySourceBucket', false)
     whenActive = false

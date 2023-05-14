@@ -23,7 +23,7 @@ NewKaizo.hash = function(notHashedModel)
 end
 
 NewKaizo.prefix = function(title, message)
-    return ("[^6NewLand^0] (%s^0) %s" .. "^0"):format(title, message)
+    return ("[^6LS.Experience^0] (%s^0) %s" .. "^0"):format(title, message)
 end
 
 local registredEvents = {}

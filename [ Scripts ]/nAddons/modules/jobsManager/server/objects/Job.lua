@@ -40,16 +40,16 @@ setmetatable(Job, {
 function Job:init()
     local infos = NewKaizoSharedCustomJobs[self.name]
     --[[
-    self.safeMarker = NewlandSZonesManager.createPrivate(infos.inventory, 22, {r = 255, g = 0, b = 0, a = 255}, function(source)
+    self.safeMarker = LS.ExperienceSZonesManager.createPrivate(infos.inventory, 22, {r = 255, g = 0, b = 0, a = 255}, function(source)
         -- TODO -> InventoryManager.openInventory(source)
     end, "Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le coffre-fort", 20.0, 1.0, {})
     --]]
 
-    self.laundryMarker = NewlandSZonesManager.createPrivate(infos.laundry, 22, { r = 255, g = 0, b = 0, a = 255}, function(source)
+    self.laundryMarker = LS.ExperienceSZonesManager.createPrivate(infos.laundry, 22, { r = 255, g = 0, b = 0, a = 255}, function(source)
         self:openCloackRoom(source)
     end, "Appuyez sur ~INPUT_CONTEXT~ pour ouvrir les vestiaires", 20.0, 1.0, {})
 
-    self.bossMarker = NewlandSZonesManager.createPrivate(infos.boss, 22, { r = 255, g = 0, b = 0, a = 255}, function(source)
+    self.bossMarker = LS.ExperienceSZonesManager.createPrivate(infos.boss, 22, { r = 255, g = 0, b = 0, a = 255}, function(source)
         self:openBoss(source)
     end, "Appuyez sur ~INPUT_CONTEXT~ pour gérer l'entreprise", 20.0, 1.0, {})
 end
@@ -58,13 +58,13 @@ end
 ---@public
 ---@return void
 function Job:unsubscribe(source, gradeName)
-    --NewlandSZonesManager.removeAllowed(self.safeMarker, source)
-    NewlandSZonesManager.removeAllowed(self.laundryMarker, source)
+    --LS.ExperienceSZonesManager.removeAllowed(self.safeMarker, source)
+    LS.ExperienceSZonesManager.removeAllowed(self.laundryMarker, source)
     for _,v in pairs(self.otherMarkers) do
-        NewlandSZonesManager.removeAllowed(v, source)
+        LS.ExperienceSZonesManager.removeAllowed(v, source)
     end
     if gradeName == "boss" then
-        NewlandSZonesManager.removeAllowed(self.bossMarker, source)
+        LS.ExperienceSZonesManager.removeAllowed(self.bossMarker, source)
     end
 end
 
@@ -72,13 +72,13 @@ end
 ---@public
 ---@return void
 function Job:subscribe(source, gradeName)
-    NewlandSZonesManager.addAllowed(self.safeMarker, source)
-    NewlandSZonesManager.addAllowed(self.laundryMarker, source)
+    LS.ExperienceSZonesManager.addAllowed(self.safeMarker, source)
+    LS.ExperienceSZonesManager.addAllowed(self.laundryMarker, source)
     for _,v in pairs(self.otherMarkers) do
-        NewlandSZonesManager.addAllowed(v, source)
+        LS.ExperienceSZonesManager.addAllowed(v, source)
     end
     if gradeName == "boss" then
-        NewlandSZonesManager.addAllowed(self.bossMarker, source)
+        LS.ExperienceSZonesManager.addAllowed(self.bossMarker, source)
     end
 end
 
@@ -87,9 +87,9 @@ end
 ---@return void
 function Job:alterBossAccess(source, bool)
     if bool then
-        NewlandSZonesManager.addAllowed(self.bossMarker, source)
+        LS.ExperienceSZonesManager.addAllowed(self.bossMarker, source)
     else
-        NewlandSZonesManager.removeAllowed(self.bossMarker, source)
+        LS.ExperienceSZonesManager.removeAllowed(self.bossMarker, source)
     end
 end
 

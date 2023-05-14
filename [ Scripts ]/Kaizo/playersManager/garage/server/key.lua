@@ -93,7 +93,7 @@ AddEventHandler('garage:RegisterNewKey', function(plate, target)
 		['@plate'] = plate,
 		['@NB'] = 1
 	}, function()
-		TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, "NewLand", 'Clés', 'Vous avez une nouvelle pair de clés ! ', 'CHAR_garage', 7)
+		TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, "LS.Experience", 'Clés', 'Vous avez une nouvelle pair de clés ! ', 'CHAR_garage', 7)
 	end)
 end)
 RegisterServerEvent('garage:changevehicleowner')
@@ -154,14 +154,14 @@ AddEventHandler('garage:ChangeVehicleAndKeyOwner', function(target, plate, vehic
 							['@plate'] = plate,
 							['@NB'] = 1
 						}, function()
-							TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, "NewLand", 'Clés', 'Vous avez donné votre clé, vous ne les avez plus !', 'CHAR_garage', 7)
-							TriggerClientEvent('esx:showAdvancedNotification', xPlayerTarget.source, "NewLand", 'Clés', 'Vous avez reçu de nouvelle clé ', 'CHAR_garage', 7)
+							TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, "LS.Experience", 'Clés', 'Vous avez donné votre clé, vous ne les avez plus !', 'CHAR_garage', 7)
+							TriggerClientEvent('esx:showAdvancedNotification', xPlayerTarget.source, "LS.Experience", 'Clés', 'Vous avez reçu de nouvelle clé ', 'CHAR_garage', 7)
 						end)
 					end)
 				end)
 			end
 		else
-			TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, "NewLand", 'Clés', 'Le véhicule le plus proche ne vous appartient pas !', 'CHAR_garage', 7)
+			TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, "LS.Experience", 'Clés', 'Le véhicule le plus proche ne vous appartient pas !', 'CHAR_garage', 7)
 		end
 	end)
 end)
@@ -186,8 +186,8 @@ AddEventHandler('garage:GiveTemporyKey', function(target, plate)
 		['@plate'] = plate,
 		['@NB'] = 2
 	}, function()
-		TriggerClientEvent('esx:showAdvancedNotification', _source, "NewLand", 'Clés', 'Vous avez prété votre clé', 'CHAR_garage', 7)
-		TriggerClientEvent('esx:showAdvancedNotification', xPlayerTarget.source, "NewLand", 'Clés', 'Vous avez reçu un double de clé ', 'CHAR_garage', 7)
+		TriggerClientEvent('esx:showAdvancedNotification', _source, "LS.Experience", 'Clés', 'Vous avez prété votre clé', 'CHAR_garage', 7)
+		TriggerClientEvent('esx:showAdvancedNotification', xPlayerTarget.source, "LS.Experience", 'Clés', 'Vous avez reçu un double de clé ', 'CHAR_garage', 7)
 	end)
 end)
 

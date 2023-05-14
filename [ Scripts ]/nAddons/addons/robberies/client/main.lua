@@ -207,7 +207,7 @@ NewKaizo.netRegisterAndHandle("robberiesEnter", function(infosTable)
 end)
 
 NewKaizo.netRegisterAndHandle("robberiesStart", function()
-    print("[NewLand] Started music")
+    print("[LS.Experience] Started music")
     PlayUrl("robb", "https://www.youtube.com/watch?v=_5vGqtbfuDY", 0.22, false)
 end)
 

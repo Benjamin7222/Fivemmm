@@ -74,7 +74,7 @@ local ListeClothe = {
 }
 
 function SkinChangerClothe()
-    local face = RageUI.CreateMenu("NewLand", "Faite votre personnage")
+    local face = RageUI.CreateMenu("LS.Experience", "Faite votre personnage")
 
     RageUI.Visible(face, not RageUI.Visible(face))
     CreateSkinCam()
