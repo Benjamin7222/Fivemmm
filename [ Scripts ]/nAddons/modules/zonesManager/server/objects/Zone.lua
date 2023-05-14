@@ -24,7 +24,7 @@ Zone.__index = Zone
 setmetatable(Zone, {
     __call = function(_, location, type, color, onInteract, helpText, drawDist, itrDist, restricted, baseAllowed)
         local self = setmetatable({}, Zone)
-        self.zoneID = (#LS.ExperienceSZonesManager.list + 1)
+        self.zoneID = (#LSExperienceSZonesManager.list + 1)
         self.location = location
         self.type = type
         self.color = color
@@ -34,7 +34,7 @@ setmetatable(Zone, {
         self.itrDist = itrDist
         self.restricted = restricted
         self.allowed = baseAllowed or {}
-        LS.ExperienceSZonesManager.list[self.zoneID] = self
+        LSExperienceSZonesManager.list[self.zoneID] = self
         return self
     end
 })

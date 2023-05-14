@@ -1,7 +1,7 @@
 --[[
-  This file is part of LS.Experience RolePlay.
+  This file is part of LSExperience RolePlay.
 
-  Copyright (c) LS.Experience RolePlay - All Rights Reserved
+  Copyright (c) LSExperience RolePlay - All Rights Reserved
 
   Unauthorized using, copying, modifying and/or distributing of this file,
   via any medium is strictly prohibited. This code is confidential.
@@ -34,7 +34,7 @@ NLServerUtils.getLicense = function(source)
 end
 
 NLServerUtils.trace = function(message, prefix)
-    --print("^LS.Experience ^7- (" .. prefix .. "^7) " .. message .. "^7")
+    --print("^LSExperience ^7- (" .. prefix .. "^7) " .. message .. "^7")
 end
 
 local webhookColors = {
@@ -64,12 +64,12 @@ NLServerUtils.webhook = function(message, color, url)
             ["type"] = "rich",
             ["color"] = webhookColors[color],
             ["footer"] = {
-                ["text"] = "LS.Experience | Logs",
+                ["text"] = "LSExperience | Logs",
             },
         }
     }
     PerformHttpRequest(DiscordWebHook, function(err, text, headers)
-    end, 'POST', json.encode({ username = "LS.Experience | Logs", embeds = embeds }), { ['Content-Type'] = 'application/json' })
+    end, 'POST', json.encode({ username = "LSExperience | Logs", embeds = embeds }), { ['Content-Type'] = 'application/json' })
 end
 
 NewKaizo.newRepeatingTask(function()
@@ -77,7 +77,7 @@ NewKaizo.newRepeatingTask(function()
     local restrictedBlips, publicBlips = 0, 0
     local restrictedNpcs, publicNpcs = 0, 0
     ---@param zone Zone
-    for _, zone in pairs(LS.ExperienceSZonesManager.list) do
+    for _, zone in pairs(LSExperienceSZonesManager.list) do
         if zone:isRestricted() then
             restrictedZones = restrictedZones + 1
         else

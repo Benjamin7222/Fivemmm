@@ -45,10 +45,10 @@ setmetatable(Robbery, {
         self.name = robberyInfos.name
         self.savedInfos = robberyInfos
         self.blip = KaizoSBlipsManager.createPublic(robberyInfos.entry, 811, 47, 0.7, "Cambriolage", true)
-        self.entryZone = LS.ExperienceSZonesManager.createPublic(robberyInfos.entry, 22, { r = 255, g = 0, b = 0, a = 255 }, function(source)
+        self.entryZone = LSExperienceSZonesManager.createPublic(robberyInfos.entry, 22, { r = 255, g = 0, b = 0, a = 255 }, function(source)
             self:openMenu(source)
         end, "Appuyez sur ~INPUT_CONTEXT~ pour vérifier la serrure", 25.0, 1.0)
-        self.exitZone = LS.ExperienceSZonesManager.createPrivate(NewKaizoSharedRobberiesInteriors[self.interior].out, 22, { r = 255, g = 0, b = 0, a = 255 }, function(source)
+        self.exitZone = LSExperienceSZonesManager.createPrivate(NewKaizoSharedRobberiesInteriors[self.interior].out, 22, { r = 255, g = 0, b = 0, a = 255 }, function(source)
             self:exitRobbery(source, false)
         end, "Appuyez sur ~INPUT_CONTEXT~ pour sortir de cette propriétée", 150.0, 1.0, {})
         self.exitBlip = KaizoSBlipsManager.createPrivate(NewKaizoSharedRobberiesInteriors[self.interior].out, 126, 69, 0.75, "Sortie", false)
@@ -68,7 +68,7 @@ end
 ---@return void
 function Robbery:startCooldown()
     NewKaizo.newWaitingThread(NewKaizo.second(60 * 15), function()
-        self.entryZone = LS.ExperienceSZonesManager.createPublic(self.savedInfos.entry, 22, { r = 255, g = 0, b = 0, a = 255 }, function(source)
+        self.entryZone = LSExperienceSZonesManager.createPublic(self.savedInfos.entry, 22, { r = 255, g = 0, b = 0, a = 255 }, function(source)
             self:openMenu(source)
         end, "Appuyez sur ~INPUT_CONTEXT~ pour vérifier la serrure", 25.0, 1.0)
         self.blip = KaizoSBlipsManager.createPublic(self.savedInfos.entry, 171, 47, 0.6, "Cambriolage", true)
@@ -87,14 +87,14 @@ function Robbery:handleStart(source)
     NewKaizoSRobberiesManager.players[source] = { id = self.id, bag = {} }
     --SetPlayerRoutingBucket(source, (15000 + source))
     KaizoSBlipsManager.delete(self.blip)
-    LS.ExperienceSZonesManager.delete(self.entryZone)
+    LSExperienceSZonesManager.delete(self.entryZone)
     NLServerUtils.toClient("robberiesStart", source)
     NLServerUtils.toClient("playScenario", source, "CODE_HUMAN_MEDIC_TEND_TO_DEAD", NewKaizo.second(30), true)
     self.isActive = false
     NewKaizo.newWaitingThread(NewKaizo.second(30), function()
         self:startCooldown()
         NLServerUtils.toClient("robberiesEnter", source, { outSideRobbery = self.savedInfos.entry, entryRobbery = NewKaizoSharedRobberiesInteriors[self.interior].entry, possibleOponents = self.possibleOponents, objects = self.possibleObjects, itemsTable = NewKaizoSharedRobberiesItems, special = self.savedInfos.specialTaskOnPed or 0 })
-        LS.ExperienceSZonesManager.addAllowed(self.exitZone, source)
+        LSExperienceSZonesManager.addAllowed(self.exitZone, source)
         KaizoSBlipsManager.addAllowed(self.exitBlip, source)
     end)
 end
@@ -120,7 +120,7 @@ function Robbery:exitRobbery(source, failed)
     end
     NewKaizoSRobberiesManager.players[source] = nil
     SetPlayerRoutingBucket(source, 0)
-    LS.ExperienceSZonesManager.removeAllowed(self.exitZone, source)
+    LSExperienceSZonesManager.removeAllowed(self.exitZone, source)
     KaizoSBlipsManager.removeAllowed(self.exitBlip, source)
     NLServerUtils.toClient("destroy", source, "robb")
     NLServerUtils.toClient("robberiesExit", source, self.savedInfos.entry)
