@@ -16,7 +16,7 @@ MarkerTourne = false, -- Si le marker tourne (true = oui, false = non)
 
 --Config Point--
 Position = {
-    Coffre = {vector3(-1204.3210449219,-892.11309814453,13.995185852051)}, -- Menu coffre 
+    Coffre = {vector3(-1200.74, -901.41, 13.97, 144.63)}, -- Menu coffre 
     GarageVehicule = {vector3(-1177.6529541016,-892.39562988281,13.760370254517)}, -- Menu Garage Vehicule
     RangerVehicule = {vector3(-1169.6101074219,-895.13696289063,13.919534683228)}, -- Menu ranger votre véhicule
     VestiaireBurgerShot = {vector3(-1182.1320800781, -899.98742675781, 13.974183082581)}, -- Menu Vestiaire
