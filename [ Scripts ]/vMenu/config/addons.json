@@ -1,0 +1,23 @@
+{
+  "vehicles": [
+    "addonvehiclename1",
+    "addonvehiclename2"
+  ],
+  "peds": [
+    "s_m_m_movalien_01",
+    "Alien",
+    "Alien2",
+    "AlienBoss",
+    "Baby",
+    "Dante",
+    "Ellie",
+    "Grinchiat",
+    "Robot",
+    "Tom",
+
+  ],
+  "weapons": [
+    "addonweaponname1",
+    "addonweaponname2"
+  ]
+}
