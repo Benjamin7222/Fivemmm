@@ -1,5 +1,5 @@
 var CONFIG = {
-	serverName: "NewLand",
+	serverName: "L.S Experience",
 	serverLink: "",
 	volume: 0.3,
 	videoVolume: 0.1,
@@ -14,17 +14,17 @@ var CONFIG = {
 		// { name: "RADIO MIAMI", link: "https://vofile.ru/ukraine/radio-maiami-ua/icecast.audio" },
 		// { name: "Lil jon - Alive", link: "music/lil_jon_alive.mp3" },
 		//{ name: "Musique : Jingle Bells Trap Remix", link: "music/1.mp3" },
-		{ name: "Bienvenue sur NewLand", link: "music/1.mp3" },
+		{ name: "Bienvenue sur L.S Experience", link: "music/1.mp3" },
 
 	],
 
 	contacts: [
-		{ avatar: "img/avatars/1.jpg", discord: "Fondateur", title: "Kaizo#6886", desc: "" },
-		{ avatar: "img/avatars/2.jpg", discord: "Développeur", title: "Kaizo#6886", desc: "" },
+		{ avatar: "img/avatars/1.jpg", discord: "Fondateur", title: "Hakim#4277", desc: "" },
+		{ avatar: "img/avatars/2.jpg", discord: "Fondateur", title: "Benji#0823", desc: "" },
 	],
 
 	news: [
-		{ img: "img/news/6.gif", title: "NewLand RP", desc: "L'équipe de NewLand vous souhaite une bonne aventure parmi nous." },
+		{ img: "img/news/6.gif", title: "L.S Experience RP", desc: "L'équipe de L.S Experience vous souhaite une bonne aventure parmi nous." },
 		// { img: "", title: "Title 2", desc: "detailed description of the news. detailed description of the news." },
 		// { img: "", title: "Title 3", desc: "detailed description of the news." },
 		// { img: "img/news/1.jpg", title: "Title 4", desc: "description description description." },
@@ -43,7 +43,7 @@ var CONFIG = {
 				{ t: "En cas de latence quand vous avez une interface graphique d'ouvert (téléphone, chat, etc..) merci de lire attentivement ci-dessous !" },
 				{ t: "Rendez vous dans 'settings' situé en haut a droite dans le launcher FiveM." },
 				{ t: "Cocher la case 'NUI in-process GPU',  le problème devrait maintenant être résolue !." },
-				{ t: "Pensez a configurer tout vos touches dans le menu echap -> configurations touches -> NewLand" },
+				{ t: "Pensez a configurer tout vos touches dans le menu echap -> configurations touches -> L.S Experience" },
 
 			],
 		},
