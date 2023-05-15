@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `account_info` (
 /*!40000 ALTER TABLE `account_info` DISABLE KEYS */;
 INSERT INTO `account_info` (`account_id`, `license`, `steam`, `xbl`, `discord`, `live`, `fivem`, `name`, `ip`, `guid`, `first_connection`) VALUES
 	(1688, 'license:4eb476b42bed74ba3527b01906b105d2d53a56d4', 'steam:1100001416a65a1', 'xbl:2535468000446034', '', 'live:844425696990856', '', 'LeBledAno', '192.168.0.153', '148618792079688493', '2023-01-22 11:58:08'),
-	(1689, 'license:a0ddd60d64e43f8ca3b5e19bfc30502bc7f3b950', 'steam:1100001143c7571', 'xbl:2533274894533308', 'discord:540870820826710016', 'live:1688852954788454', '', 'Edward Carter', '192.168.31.211', '148618792269587821', '2023-05-13 19:57:03');
+	(1689, 'license:a0ddd60d64e43f8ca3b5e19bfc30502bc7f3b950', 'steam:1100001143c7571', 'xbl:2533274894533308', 'discord:540870820826710016', 'live:1688852954788454', '', 'Edward Carter', '192.168.31.211', '148618792347123680', '2023-05-13 19:57:03');
 /*!40000 ALTER TABLE `account_info` ENABLE KEYS */;
 
 -- Listage de la structure de table base70. activity
@@ -111,41 +111,41 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `index_addon_account_data_account_name` (`account_name`(191)) USING BTREE,
   KEY `index_addon_account_data_account_name_owner` (`account_name`(191),`owner`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14235 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=14391 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Listage des données de la table base70.addon_account_data : ~31 rows (environ)
 INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(10538, 'society_police', 60, NULL),
-	(10683, 'society_carshop', 7475499, NULL),
+	(10683, 'society_carshop', 7468049, NULL),
 	(12267, 'society_unicorn', 2199, NULL),
-	(12608, 'society_mecano', 999000, NULL),
+	(12608, 'society_mecano', 997000, NULL),
 	(13286, 'society_gouvernement', 25, NULL),
-	(14209, 'society_410th', 0, NULL),
-	(14210, 'society_agentimmo', 0, NULL),
-	(14211, 'society_ambulance', 0, NULL),
-	(14212, 'society_armeniens', 0, NULL),
-	(14213, 'society_avocat', 0, NULL),
-	(14214, 'society_bahamas', 0, NULL),
-	(14215, 'society_ballas', 0, NULL),
-	(14216, 'society_blanchi', 0, NULL),
-	(14217, 'society_bloods', 0, NULL),
-	(14218, 'society_burgershot', 0, NULL),
-	(14219, 'society_camorra', 0, NULL),
-	(14220, 'society_carteldecali', 0, NULL),
-	(14221, 'society_cayo', 0, NULL),
-	(14222, 'society_cosanostra', 0, NULL),
-	(14223, 'society_families', 0, NULL),
-	(14224, 'society_famillies', 0, NULL),
-	(14225, 'society_lost', 0, NULL),
-	(14226, 'society_lsarmy', 0, NULL),
-	(14227, 'society_madrazo', 0, NULL),
-	(14228, 'society_marabunta', 0, NULL),
-	(14229, 'society_sheriff', 0, NULL),
-	(14230, 'society_sixbullets', 0, NULL),
-	(14231, 'society_taxi', 0, NULL),
-	(14232, 'society_vagos', 0, NULL),
-	(14233, 'society_vigne', 0, NULL),
-	(14234, 'society_white', 0, NULL);
+	(14365, 'society_410th', 0, NULL),
+	(14366, 'society_agentimmo', 0, NULL),
+	(14367, 'society_ambulance', 0, NULL),
+	(14368, 'society_armeniens', 0, NULL),
+	(14369, 'society_avocat', 0, NULL),
+	(14370, 'society_bahamas', 0, NULL),
+	(14371, 'society_ballas', 0, NULL),
+	(14372, 'society_blanchi', 0, NULL),
+	(14373, 'society_bloods', 0, NULL),
+	(14374, 'society_burgershot', 0, NULL),
+	(14375, 'society_camorra', 0, NULL),
+	(14376, 'society_carteldecali', 0, NULL),
+	(14377, 'society_cayo', 0, NULL),
+	(14378, 'society_cosanostra', 0, NULL),
+	(14379, 'society_families', 0, NULL),
+	(14380, 'society_famillies', 0, NULL),
+	(14381, 'society_lost', 0, NULL),
+	(14382, 'society_lsarmy', 0, NULL),
+	(14383, 'society_madrazo', 0, NULL),
+	(14384, 'society_marabunta', 0, NULL),
+	(14385, 'society_sheriff', 0, NULL),
+	(14386, 'society_sixbullets', 0, NULL),
+	(14387, 'society_taxi', 0, NULL),
+	(14388, 'society_vagos', 0, NULL),
+	(14389, 'society_vigne', 0, NULL),
+	(14390, 'society_white', 0, NULL);
 
 -- Listage de la structure de table base70. addon_inventory
 CREATE TABLE IF NOT EXISTS `addon_inventory` (
@@ -215,9 +215,11 @@ CREATE TABLE IF NOT EXISTS `addon_inventory_items` (
   KEY `index_addon_inventory_items_inventory_name_name` (`inventory_name`,`name`) USING BTREE,
   KEY `index_addon_inventory_items_inventory_name_name_owner` (`inventory_name`,`name`,`owner`) USING BTREE,
   KEY `index_addon_inventory_inventory_name` (`inventory_name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=395 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=396 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Listage des données de la table base70.addon_inventory_items : ~0 rows (environ)
+INSERT INTO `addon_inventory_items` (`id`, `inventory_name`, `name`, `count`, `owner`) VALUES
+	(395, 'society_ballas', 'weed_pooch', 50, NULL);
 
 -- Listage de la structure de table base70. appels_ems
 CREATE TABLE IF NOT EXISTS `appels_ems` (
@@ -230,6 +232,21 @@ CREATE TABLE IF NOT EXISTS `appels_ems` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Listage des données de la table base70.appels_ems : ~0 rows (environ)
+
+-- Listage de la structure de table base70. baninfo
+CREATE TABLE IF NOT EXISTS `baninfo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `license` varchar(50) DEFAULT NULL,
+  `identifier` varchar(25) DEFAULT NULL,
+  `liveid` varchar(21) DEFAULT NULL,
+  `xblid` varchar(21) DEFAULT NULL,
+  `discord` varchar(30) DEFAULT NULL,
+  `playerip` varchar(25) DEFAULT NULL,
+  `playername` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- Listage des données de la table base70.baninfo : ~0 rows (environ)
 
 -- Listage de la structure de table base70. banlist
 CREATE TABLE IF NOT EXISTS `banlist` (
@@ -359,11 +376,9 @@ CREATE TABLE IF NOT EXISTS `coffre_builder` (
   `autorisationdepotarme` longtext DEFAULT '0',
   `autorisationretraitarme` longtext DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table base70.coffre_builder : ~0 rows (environ)
-INSERT INTO `coffre_builder` (`id`, `position`, `namecoffre`, `society`, `job`, `argentsaleactivation`, `argentpropreactivation`, `armeactivation`, `objetactivation`, `amountpropre`, `amountsale`, `autorisationretraititem`, `autorisationdepotitem`, `autorisationretraitargent`, `autorisationdepotargent`, `autorisationcoffrefort`, `autorisationdepotarme`, `autorisationretraitarme`) VALUES
-	(56, '{"x":484.79949951171877,"y":-1006.98828125,"z":25.467378616333}', 'Police', 'society_police', 'police', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+-- Listage des données de la table base70.coffre_builder : ~1 rows (environ)
 
 -- Listage de la structure de table base70. datastore
 CREATE TABLE IF NOT EXISTS `datastore` (
@@ -432,51 +447,51 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `index_datastore_data_name` (`name`) USING BTREE,
   KEY `index_datastore_data_name_owner` (`name`,`owner`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=36888 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=37126 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Listage des données de la table base70.datastore_data : ~41 rows (environ)
 INSERT INTO `datastore_data` (`id`, `name`, `data`, `owner`) VALUES
 	(35475, 'society_police', '{"weapons":[{"name":"WEAPON_PUMPSHOTGUN","count":0}]}', NULL),
-	(36848, 'society_410th', '{}', NULL),
-	(36849, 'society_ambulance', '{}', NULL),
-	(36850, 'society_armenien', '{}', NULL),
-	(36851, 'society_armeniens', '{}', NULL),
-	(36852, 'society_avocat', '{}', NULL),
-	(36853, 'society_bahamas', '{}', NULL),
-	(36854, 'society_ballas', '{}', NULL),
-	(36855, 'society_blanchi', '{}', NULL),
-	(36856, 'society_bloods', '{}', NULL),
-	(36857, 'society_burgershot', '{}', NULL),
-	(36858, 'society_cali', '{}', NULL),
-	(36859, 'society_camorra', '{}', NULL),
-	(36860, 'society_carshop', '{}', NULL),
-	(36861, 'society_cartelcali', '{}', NULL),
-	(36862, 'society_carteldecali', '{}', NULL),
-	(36863, 'society_cayo', '{}', NULL),
-	(36864, 'society_cosanostra', '{}', NULL),
-	(36865, 'society_families', '{}', NULL),
-	(36866, 'society_famillies', '{}', NULL),
-	(36867, 'society_gouvernement', '{}', NULL),
-	(36868, 'society_journalist', '{}', NULL),
-	(36869, 'society_logger', '{}', NULL),
-	(36870, 'society_lost', '{}', NULL),
-	(36871, 'society_lsarmy', '{}', NULL),
-	(36872, 'society_madrazo', '{}', NULL),
-	(36873, 'society_marabunta', '{}', NULL),
-	(36874, 'society_mecano', '{}', NULL),
-	(36875, 'society_motoshop', '{}', NULL),
-	(36876, 'society_planeshop', '{}', NULL),
-	(36877, 'society_realestateagent', '{}', NULL),
-	(36878, 'society_rockford', '{}', NULL),
-	(36879, 'society_sheriff', '{}', NULL),
-	(36880, 'society_sixbullets', '{}', NULL),
-	(36881, 'society_tabac', '{}', NULL),
-	(36882, 'society_taxi', '{}', NULL),
-	(36883, 'society_testtest', '{}', NULL),
-	(36884, 'society_unicorn', '{}', NULL),
-	(36885, 'society_vagos', '{}', NULL),
-	(36886, 'society_vigne', '{}', NULL),
-	(36887, 'society_white', '{}', NULL);
+	(37014, 'society_ballas', '{"weapons":[{"count":0,"name":"WEAPON_COMBATPISTOL"},{"count":0,"name":"WEAPON_PUMPSHOTGUN"}]}', NULL),
+	(37087, 'society_410th', '{}', NULL),
+	(37088, 'society_ambulance', '{}', NULL),
+	(37089, 'society_armenien', '{}', NULL),
+	(37090, 'society_armeniens', '{}', NULL),
+	(37091, 'society_avocat', '{}', NULL),
+	(37092, 'society_bahamas', '{}', NULL),
+	(37093, 'society_blanchi', '{}', NULL),
+	(37094, 'society_bloods', '{}', NULL),
+	(37095, 'society_burgershot', '{}', NULL),
+	(37096, 'society_cali', '{}', NULL),
+	(37097, 'society_camorra', '{}', NULL),
+	(37098, 'society_carshop', '{}', NULL),
+	(37099, 'society_cartelcali', '{}', NULL),
+	(37100, 'society_cayo', '{}', NULL),
+	(37101, 'society_carteldecali', '{}', NULL),
+	(37102, 'society_cosanostra', '{}', NULL),
+	(37103, 'society_families', '{}', NULL),
+	(37104, 'society_famillies', '{}', NULL),
+	(37105, 'society_gouvernement', '{}', NULL),
+	(37106, 'society_journalist', '{}', NULL),
+	(37107, 'society_logger', '{}', NULL),
+	(37108, 'society_lost', '{}', NULL),
+	(37109, 'society_lsarmy', '{}', NULL),
+	(37110, 'society_madrazo', '{}', NULL),
+	(37111, 'society_marabunta', '{}', NULL),
+	(37112, 'society_mecano', '{}', NULL),
+	(37113, 'society_motoshop', '{}', NULL),
+	(37114, 'society_planeshop', '{}', NULL),
+	(37115, 'society_realestateagent', '{}', NULL),
+	(37116, 'society_rockford', '{}', NULL),
+	(37117, 'society_sheriff', '{}', NULL),
+	(37118, 'society_sixbullets', '{}', NULL),
+	(37119, 'society_tabac', '{}', NULL),
+	(37120, 'society_taxi', '{}', NULL),
+	(37121, 'society_testtest', '{}', NULL),
+	(37122, 'society_unicorn', '{}', NULL),
+	(37123, 'society_vagos', '{}', NULL),
+	(37124, 'society_vigne', '{}', NULL),
+	(37125, 'society_white', '{}', NULL);
 
 -- Listage de la structure de table base70. data_inventory
 CREATE TABLE IF NOT EXISTS `data_inventory` (
@@ -1571,6 +1586,35 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 	(78418523, 'camorra', 0, 'recrue', 'Petit', 0, '{}', '{}'),
 	(78418524, 'camorra', 3, 'droit', 'Bras Droit', 0, '{}', '{}');
 
+-- Listage de la structure de table base70. kc_jails
+CREATE TABLE IF NOT EXISTS `kc_jails` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `license` varchar(100) NOT NULL DEFAULT '0',
+  `name` varchar(100) NOT NULL DEFAULT '0',
+  `admin_name` varchar(100) NOT NULL DEFAULT '0',
+  `admin_identifier` varchar(100) NOT NULL DEFAULT '0',
+  `time` varchar(100) NOT NULL DEFAULT '0',
+  `time_s` varchar(100) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
+
+-- Listage des données de la table base70.kc_jails : ~0 rows (environ)
+
+-- Listage de la structure de table base70. kc_warns
+CREATE TABLE IF NOT EXISTS `kc_warns` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(100) NOT NULL DEFAULT '0',
+  `license` varchar(100) NOT NULL DEFAULT '0',
+  `reason` varchar(250) NOT NULL DEFAULT '0',
+  `name` varchar(250) NOT NULL DEFAULT '0',
+  `admin_name` varchar(250) NOT NULL DEFAULT '0',
+  `admin_identifier` varchar(100) NOT NULL DEFAULT '0',
+  `timestamp` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
+
+-- Listage des données de la table base70.kc_warns : ~0 rows (environ)
+
 -- Listage de la structure de table base70. licenses
 CREATE TABLE IF NOT EXISTS `licenses` (
   `type` varchar(60) NOT NULL,
@@ -1741,7 +1785,7 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   `boutique` tinyint(1) NOT NULL DEFAULT 0,
   `carseller` int(11) DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=425 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=426 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Listage des données de la table base70.owned_vehicles : ~7 rows (environ)
 INSERT INTO `owned_vehicles` (`id`, `owner`, `plate`, `vehicle`, `type`, `state`, `label`, `boutique`, `carseller`) VALUES
@@ -1751,7 +1795,8 @@ INSERT INTO `owned_vehicles` (`id`, `owner`, `plate`, `vehicle`, `type`, `state`
 	(421, 'license:4eb476b42bed74ba3527b01906b105d2d53a56d4', 'DZLW9791', '{"modFender":-1,"model":1549126457,"modVanityPlate":-1,"modRoof":-1,"modShifterLeavers":-1,"modAirFilter":-1,"bodyHealth":1000.0,"modGrille":-1,"modBrakes":-1,"modExhaust":-1,"modFrontWheels":-1,"modTrimB":-1,"modSpeakers":-1,"color1":0,"modTrimA":-1,"modWindows":-1,"neonEnabled":[false,false,false,false],"modLivery":-1,"modSteeringWheel":-1,"modEngineBlock":-1,"engineHealth":1000.0,"modSuspension":-1,"modDial":-1,"modTrunk":-1,"modArchCover":-1,"xenonColor":255,"neonColor":[255,0,255],"modHood":-1,"modSmokeEnabled":false,"wheels":5,"pearlescentColor":5,"modTransmission":-1,"modSeats":-1,"modFrame":-1,"extras":[],"modSpoilers":-1,"modHorns":-1,"modStruts":-1,"modAerials":-1,"modAPlate":-1,"modSideSkirt":-1,"modHydrolic":-1,"windowTint":-1,"modRearBumper":-1,"modBackWheels":-1,"modArmor":-1,"color2":4,"modXenon":false,"plateIndex":0,"modDashboard":-1,"modRightFender":-1,"modPlateHolder":-1,"modTurbo":false,"dirtLevel":4.0,"modFrontBumper":-1,"fuelLevel":65.0,"modOrnaments":-1,"modTank":-1,"modEngine":-1,"plate":"DZLW9791","modDoorSpeaker":-1,"wheelColor":112,"tyreSmokeColor":[255,255,255]}', 'car', 0, 'Votre voiture', 0, 0),
 	(422, 'license:4eb476b42bed74ba3527b01906b105d2d53a56d4', 'TZLN3612', '{"modXenon":false,"modTrunk":-1,"modTrimA":-1,"fuelLevel":60.0,"modRightFender":-1,"modRoof":-1,"modSmokeEnabled":false,"modArmor":-1,"model":-1728685474,"modTransmission":-1,"wheels":7,"modStruts":-1,"modHood":-1,"plate":"TZLN3612","windowTint":-1,"modShifterLeavers":-1,"color2":111,"modFender":-1,"modLivery":-1,"modTank":-1,"modVanityPlate":-1,"bodyHealth":998.7,"engineHealth":1000.0,"modSpeakers":-1,"modTurbo":false,"modWindows":-1,"modDoorSpeaker":-1,"wheelColor":156,"neonColor":[255,0,255],"modDial":-1,"modOrnaments":-1,"modEngine":-1,"modGrille":-1,"modAerials":-1,"pearlescentColor":74,"extras":{"1":true},"modBrakes":-1,"plateIndex":0,"modPlateHolder":-1,"modSteeringWheel":-1,"modTrimB":-1,"modAPlate":-1,"modFrame":-1,"modRearBumper":-1,"modFrontBumper":-1,"neonEnabled":[false,false,false,false],"modEngineBlock":-1,"dirtLevel":3.2,"modBackWheels":-1,"color1":73,"xenonColor":255,"modSpoilers":-1,"modHydrolic":-1,"modDashboard":-1,"tyreSmokeColor":[255,255,255],"modHorns":-1,"modSuspension":-1,"modExhaust":-1,"modAirFilter":-1,"modSeats":-1,"modArchCover":-1,"modSideSkirt":-1,"modFrontWheels":-1}', 'car', 1, 'Votre voiture', 0, 0),
 	(423, 'license:4eb476b42bed74ba3527b01906b105d2d53a56d4', 'KTYE4360', '{"color2":3,"wheelColor":156,"modTurbo":false,"modXenon":false,"modBackWheels":-1,"fuelLevel":58.2,"modShifterLeavers":-1,"modSmokeEnabled":false,"modArchCover":-1,"xenonColor":255,"wheels":7,"dirtLevel":1.3,"modTrimA":-1,"modHydrolic":-1,"bodyHealth":977.2,"plate":"KTYE4360","modFender":-1,"modHorns":-1,"modLivery":-1,"modSideSkirt":-1,"modFrontWheels":-1,"modEngine":-1,"neonColor":[255,0,255],"modAerials":-1,"modArmor":-1,"modFrontBumper":-1,"modSpoilers":-1,"extras":[],"modBrakes":-1,"pearlescentColor":5,"modTank":-1,"modFrame":-1,"modGrille":-1,"modHood":-1,"neonEnabled":[false,false,false,false],"modSteeringWheel":-1,"modTransmission":-1,"modDial":-1,"modVanityPlate":-1,"plateIndex":0,"modAPlate":-1,"tyreSmokeColor":[255,255,255],"modRoof":-1,"modEngineBlock":-1,"modSpeakers":-1,"modSuspension":-1,"modOrnaments":-1,"modRearBumper":-1,"modPlateHolder":-1,"windowTint":-1,"modAirFilter":-1,"modDoorSpeaker":-1,"modStruts":-1,"modWindows":-1,"engineHealth":994.9,"color1":3,"modTrimB":-1,"modSeats":-1,"modExhaust":-1,"model":408192225,"modRightFender":-1,"modTrunk":-1,"modDashboard":-1}', 'car', 0, 'Votre voiture', 0, 0),
-	(424, 'license:4eb476b42bed74ba3527b01906b105d2d53a56d4', 'IDVF3175', '{"modWindows":-1,"modSteeringWheel":-1,"color1":36,"pearlescentColor":88,"modSmokeEnabled":false,"modArmor":-1,"modSpeakers":-1,"modSeats":-1,"modAPlate":-1,"modExhaust":-1,"modDoorSpeaker":-1,"modSideSkirt":-1,"modRoof":-1,"modXenon":false,"modHydrolic":-1,"modAirFilter":-1,"modSpoilers":-1,"wheels":7,"modHorns":-1,"modStruts":-1,"modSuspension":-1,"modShifterLeavers":-1,"modFrontWheels":-1,"modTank":-1,"modOrnaments":-1,"model":-313185164,"modGrille":-1,"neonEnabled":[false,false,false,false],"xenonColor":255,"fuelLevel":65.0,"wheelColor":12,"modArchCover":-1,"modPlateHolder":-1,"modTrimA":-1,"modFender":-1,"modHood":-1,"modTurbo":false,"plateIndex":0,"modBackWheels":-1,"modBrakes":-1,"color2":36,"windowTint":-1,"modLivery":-1,"modEngine":-1,"modAerials":-1,"tyreSmokeColor":[255,255,255],"extras":[],"modFrontBumper":-1,"neonColor":[255,0,255],"modTransmission":-1,"engineHealth":1000.0,"modEngineBlock":-1,"modTrunk":-1,"modVanityPlate":-1,"modRightFender":-1,"dirtLevel":1.0,"modTrimB":-1,"bodyHealth":1000.0,"modDashboard":-1,"modDial":-1,"modRearBumper":-1,"plate":"IDVF3175","modFrame":-1}', 'car', 0, 'Votre voiture', 0, 0);
+	(424, 'license:4eb476b42bed74ba3527b01906b105d2d53a56d4', 'IDVF3175', '{"modWindows":-1,"modSteeringWheel":-1,"color1":36,"pearlescentColor":88,"modSmokeEnabled":false,"modArmor":-1,"modSpeakers":-1,"modSeats":-1,"modAPlate":-1,"modExhaust":-1,"modDoorSpeaker":-1,"modSideSkirt":-1,"modRoof":-1,"modXenon":false,"modHydrolic":-1,"modAirFilter":-1,"modSpoilers":-1,"wheels":7,"modHorns":-1,"modStruts":-1,"modSuspension":-1,"modShifterLeavers":-1,"modFrontWheels":-1,"modTank":-1,"modOrnaments":-1,"model":-313185164,"modGrille":-1,"neonEnabled":[false,false,false,false],"xenonColor":255,"fuelLevel":65.0,"wheelColor":12,"modArchCover":-1,"modPlateHolder":-1,"modTrimA":-1,"modFender":-1,"modHood":-1,"modTurbo":false,"plateIndex":0,"modBackWheels":-1,"modBrakes":-1,"color2":36,"windowTint":-1,"modLivery":-1,"modEngine":-1,"modAerials":-1,"tyreSmokeColor":[255,255,255],"extras":[],"modFrontBumper":-1,"neonColor":[255,0,255],"modTransmission":-1,"engineHealth":1000.0,"modEngineBlock":-1,"modTrunk":-1,"modVanityPlate":-1,"modRightFender":-1,"dirtLevel":1.0,"modTrimB":-1,"bodyHealth":1000.0,"modDashboard":-1,"modDial":-1,"modRearBumper":-1,"plate":"IDVF3175","modFrame":-1}', 'car', 0, 'Votre voiture', 0, 0),
+	(425, 'license:a0ddd60d64e43f8ca3b5e19bfc30502bc7f3b950', 'RRMM7925', '{"dirtLevel":2.0,"tyreSmokeColor":[255,255,255],"modBrakes":-1,"wheelColor":156,"modFrame":-1,"modEngineBlock":-1,"modHood":-1,"bodyHealth":1000.0,"modGrille":-1,"fuelLevel":65.0,"modTrunk":-1,"modDial":-1,"color2":0,"wheels":0,"modExhaust":-1,"xenonColor":255,"modArmor":-1,"modHorns":-1,"modLivery":-1,"modAPlate":-1,"modRoof":-1,"modWindows":-1,"modAirFilter":-1,"modSpeakers":-1,"modDoorSpeaker":-1,"neonEnabled":[false,false,false,false],"modTurbo":false,"modPlateHolder":-1,"windowTint":-1,"modStruts":-1,"neonColor":[255,0,255],"modTrimA":-1,"modBackWheels":-1,"engineHealth":1000.0,"modSpoilers":-1,"modEngine":-1,"modSeats":-1,"modTrimB":-1,"modFrontBumper":-1,"modVanityPlate":-1,"modRearBumper":-1,"modDashboard":-1,"modTank":-1,"modFender":-1,"modAerials":-1,"plate":"RRMM7925","modRightFender":-1,"modFrontWheels":-1,"modShifterLeavers":-1,"modSideSkirt":-1,"extras":{"10":false,"12":true},"modSmokeEnabled":false,"modHydrolic":-1,"plateIndex":0,"modArchCover":-1,"pearlescentColor":111,"modSteeringWheel":-1,"modXenon":false,"modTransmission":-1,"color1":6,"model":-344943009,"modSuspension":-1,"modOrnaments":-1}', 'car', 0, 'Votre voiture', 0, 0);
 
 -- Listage de la structure de table base70. playerstattoos
 CREATE TABLE IF NOT EXISTS `playerstattoos` (
@@ -1987,8 +2032,6 @@ CREATE TABLE IF NOT EXISTS `truck_inventory2` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Listage des données de la table base70.truck_inventory2 : ~0 rows (environ)
-INSERT INTO `truck_inventory2` (`id`, `plate`, `data`, `owned`) VALUES
-	(1, '02OVL007', '{}', 0);
 
 -- Listage de la structure de table base70. users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -2029,10 +2072,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `identifier_3` (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Listage des données de la table base70.users : ~1 rows (environ)
+-- Listage des données de la table base70.users : ~2 rows (environ)
 INSERT INTO `users` (`identifier`, `permission_group`, `permission_level`, `position`, `skin`, `accounts`, `inventory`, `loadout`, `job`, `job_grade`, `job2`, `job2_grade`, `isDead`, `status`, `last_property`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `animations`, `jail_time`, `xp`, `cloths`, `statuscompte`, `phone_number`, `hotbar`, `iban`, `pincode`, `foto`, `search`, `dangerous`) VALUES
 	('license:4eb476b42bed74ba3527b01906b105d2d53a56d4', '_dev', 4, '{"z":59.70000076293945,"y":-193.10000610351563,"x":19.60000038146972}', '{"chest_3":0,"moles_2":0,"makeup_1":0,"bracelets_1":-1,"tshirt_2":0,"decals_2":0,"lipstick_3":0,"blemishes_1":0,"mask_2":0,"age_2":0,"moles_1":0,"sun_1":0,"face":0,"bproof_1":7,"chain_2":0,"pants_2":0,"arms_2":0,"bodyb_2":0,"chain_1":1,"eyebrows_3":0,"beard_4":0,"shoes_1":90,"mask_1":210,"lipstick_4":0,"hair_2":0,"bags_1":0,"blemishes_2":0,"watches_2":0,"torso_1":206,"makeup_4":0,"glasses_1":0,"shoes_2":0,"eyebrows_1":0,"watches_1":-1,"eyebrows_4":0,"age_1":0,"bracelets_2":0,"chest_2":0,"arms":19,"sex":0,"sun_2":0,"blush_1":0,"beard_3":0,"complexion_1":0,"lipstick_2":0,"helmet_2":0,"blush_2":0,"skin":0,"chest_1":0,"glasses_2":0,"eyebrows_2":0,"complexion_2":0,"tshirt_1":82,"helmet_1":195,"blush_3":0,"makeup_3":0,"pants_1":133,"beard_1":0,"hair_1":0,"makeup_2":0,"hair_color_1":0,"eye_color":0,"hair_color_2":0,"torso_2":0,"beard_2":0,"bags_2":0,"decals_1":0,"bproof_2":4,"lipstick_1":0,"ears_2":0,"ears_1":2,"bodyb_1":0}', '[{"money":5856,"name":"cash"},{"money":12611,"name":"dirtycash"},{"money":64554,"name":"bank"},{"money":0,"name":"chip"}]', '[{"name":"basic_key","count":1},{"name":"phone","count":1}]', '[]', 'police', 9, 'ballas', 1, 0, '[{"name":"hunger","val":156500,"percent":15.65},{"name":"thirst","val":242375,"percent":24.2375}]', NULL, 'jjo', 'kkp', '29/03/2000', 'm', '180', NULL, 0, 1, NULL, 0, NULL, NULL, 'NL1234', 1234, 'https://us.123rf.com/450wm/thesomeday123/thesomeday1231712/thesomeday123171200008/91087328-icono-de-perfil-de-avatar-predeterminado-para-mujer-marcador-de-posición-de-foto-gris-vector-de-ilus.jpg?ver=6', '{"inSearch":false,"motivo":""}', '{"danger":false,"motivo":""}'),
-	('license:a0ddd60d64e43f8ca3b5e19bfc30502bc7f3b950', 'admin', 0, '{"x":166.6999969482422,"y":-179.39999389648438,"z":54.29999923706055}', '{"bracelets_2":0,"makeup_2":0,"blush_2":0,"tshirt_2":0,"eye_color":0,"chest_2":0,"shoes_1":0,"blemishes_2":0,"bodyb_2":0,"ears_1":-1,"shoes_2":0,"hair_2":0,"beard_2":0,"chain_1":0,"blemishes_1":0,"hair_1":0,"torso_1":506,"blush_3":0,"moles_2":0,"chain_2":0,"decals_2":0,"makeup_1":0,"bags_2":0,"arms_2":0,"makeup_3":0,"complexion_1":0,"age_2":0,"beard_3":0,"watches_1":-1,"sun_2":0,"lipstick_3":0,"glasses_1":0,"face":0,"helmet_1":-1,"glasses_2":0,"watches_2":0,"mask_1":0,"bags_1":0,"eyebrows_4":0,"lipstick_2":0,"hair_color_1":0,"moles_1":0,"mask_2":0,"beard_4":0,"arms":0,"age_1":0,"helmet_2":0,"tshirt_1":0,"pants_1":0,"chest_1":0,"eyebrows_3":0,"blush_1":0,"sun_1":0,"makeup_4":0,"sex":0,"bodyb_1":0,"bproof_2":0,"bracelets_1":-1,"bproof_1":0,"beard_1":0,"pants_2":0,"eyebrows_1":0,"eyebrows_2":0,"chest_3":0,"lipstick_4":0,"decals_1":0,"complexion_2":0,"torso_2":0,"skin":0,"hair_color_2":0,"ears_2":0,"lipstick_1":0}', '[{"name":"cash","money":4875},{"name":"dirtycash","money":2691},{"name":"bank","money":69000},{"name":"chip","money":0}]', '[{"name":"weed_pooch","count":135},{"name":"radio","count":1},{"name":"phone","count":1}]', '[{"label":"Carabine d\'assaut","ammo":250,"name":"WEAPON_CARBINERIFLE","components":[]},{"label":"Fusil de sniper","ammo":250,"name":"WEAPON_SNIPERRIFLE","components":[]},{"label":"Fusil à pompe","ammo":250,"name":"WEAPON_PUMPSHOTGUN","components":[]},{"label":"Lampe torche","ammo":250,"name":"WEAPON_FLASHLIGHT","components":[]},{"label":"Matraque","ammo":250,"name":"WEAPON_NIGHTSTICK","components":[]},{"label":"Pistolet de combat","ammo":250,"name":"WEAPON_COMBATPISTOL","components":[]},{"label":"Tazer","ammo":250,"name":"WEAPON_STUNGUN","components":[]}]', 'police', 4, 'unemployed2', 0, 0, '[{"name":"hunger","val":297000,"percent":29.7},{"name":"thirst","val":472750,"percent":47.275}]', NULL, 'edward', 'carter', '23/10/1996', 'm', '180', NULL, 0, 1, NULL, 0, NULL, NULL, 'OK370971', NULL, 'https://us.123rf.com/450wm/thesomeday123/thesomeday1231712/thesomeday123171200008/91087328-icono-de-perfil-de-avatar-predeterminado-para-mujer-marcador-de-posición-de-foto-gris-vector-de-ilus.jpg?ver=6', '{"inSearch":false,"motivo":""}', '{"danger":false,"motivo":""}');
+	('license:a0ddd60d64e43f8ca3b5e19bfc30502bc7f3b950', '_dev', 0, '{"z":31.89999961853027,"y":-978.4000244140625,"x":426.6000061035156}', '{"decals_2":0,"bproof_1":0,"makeup_1":0,"helmet_1":-1,"age_2":0,"ears_2":0,"helmet_2":0,"chest_2":0,"eyebrows_2":0,"hair_1":0,"bags_1":0,"chest_1":0,"bracelets_2":0,"lipstick_3":0,"complexion_2":0,"shoes_1":7,"mask_1":0,"blemishes_1":0,"bags_2":0,"torso_1":282,"chain_1":0,"arms":0,"hair_color_2":0,"eyebrows_4":0,"pants_1":27,"watches_1":-1,"bracelets_1":-1,"lipstick_4":0,"ears_1":-1,"hair_2":0,"lipstick_2":0,"chest_3":0,"skin":0,"face":0,"shoes_2":0,"sex":0,"glasses_1":0,"blush_1":0,"bproof_2":0,"sun_2":0,"complexion_1":0,"blemishes_2":0,"eye_color":0,"glasses_2":0,"eyebrows_1":0,"torso_2":0,"beard_3":0,"lipstick_1":0,"beard_2":0,"bodyb_1":0,"age_1":0,"beard_4":0,"decals_1":0,"moles_2":0,"watches_2":0,"chain_2":0,"arms_2":0,"makeup_2":0,"blush_2":0,"mask_2":0,"eyebrows_3":0,"hair_color_1":0,"sun_1":0,"moles_1":0,"pants_2":3,"makeup_3":0,"beard_1":0,"makeup_4":0,"tshirt_2":3,"blush_3":0,"bodyb_2":0,"tshirt_1":15}', '[{"name":"cash","money":0},{"name":"dirtycash","money":206},{"name":"bank","money":72316},{"name":"chip","money":0}]', '[{"name":"weed_pooch","count":60},{"name":"radio","count":2},{"name":"phone","count":1}]', '[{"name":"WEAPON_CARBINERIFLE","label":"Carabine d\'assaut","components":[],"ammo":250},{"name":"WEAPON_SNIPERRIFLE","label":"Fusil de sniper","components":[],"ammo":250},{"name":"WEAPON_PUMPSHOTGUN","label":"Fusil à pompe","components":[],"ammo":60},{"name":"WEAPON_FLASHLIGHT","label":"Lampe torche","components":[],"ammo":250},{"name":"WEAPON_NIGHTSTICK","label":"Matraque","components":[],"ammo":250},{"name":"WEAPON_COMBATPISTOL","label":"Pistolet de combat","components":[],"ammo":60},{"name":"WEAPON_STUNGUN","label":"Tazer","components":[],"ammo":250}]', 'police', 3, 'vagos', 2, 0, '[{"name":"hunger","val":311400,"percent":31.14},{"name":"thirst","val":358550,"percent":35.855}]', NULL, 'edward', 'carter', '23/10/1996', 'm', '180', NULL, 0, 1, NULL, 0, NULL, NULL, 'OK370971', NULL, 'https://us.123rf.com/450wm/thesomeday123/thesomeday1231712/thesomeday123171200008/91087328-icono-de-perfil-de-avatar-predeterminado-para-mujer-marcador-de-posición-de-foto-gris-vector-de-ilus.jpg?ver=6', '{"inSearch":false,"motivo":""}', '{"danger":false,"motivo":""}');
 
 -- Listage de la structure de table base70. user_licenses
 CREATE TABLE IF NOT EXISTS `user_licenses` (
