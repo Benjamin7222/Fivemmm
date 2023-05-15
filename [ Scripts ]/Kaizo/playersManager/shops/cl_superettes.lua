@@ -2,6 +2,11 @@
 LTDItem = {
     {name = 'bread', label = 'Pain', price = 10},
     {name = 'water', label = 'Bouteille d\'eau', price = 10},
+    {name = 'chocolat_chaud', label = 'Chocolat Chaud', price = 10},
+    {name = 'espresso', label = 'Espresso', price = 10},
+    {name = 'orange_juice', label = 'Jus d\'orange', price = 10},
+    {name = 'coca', label = 'Coca Cola', price = 10},
+    {name = 'cola', label = 'oasis', price = 10},
 }
 
 
