@@ -36,7 +36,7 @@ AddEventHandler("taxi:FinishMission", function(bonus)
         return
     end
 
-    local gain = math.random(70,150) + bonus
+    local gain = math.random(70,120) + bonus
     xPlayer.addAccountMoney('bank', gain)
 
     TriggerClientEvent("esx:showNotification", source, "Vous avez terminé votre mission.\nGain: "..gain.."$", "CHAR_FLOYD", 5000, "danger")
